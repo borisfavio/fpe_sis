@@ -1,0 +1,1047 @@
+CRITICAL - 2025-03-17 05:16:32 --> Error: Class "App\models\Auth_model" not found
+[Method: GET, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 05:23:15 --> Error: Class "App\models\Auth_model" not found
+[Method: POST, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 05:49:36 --> Error: Class "App\models\Auth_model" not found
+[Method: POST, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 05:50:20 --> Error: Class "App\models\Auth_model" not found
+[Method: POST, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 05:57:45 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: POST, Route: do_login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(17): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 05:57:57 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(17): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 05:59:22 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(17): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 05:59:45 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(17): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:00:42 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(17): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:02:52 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:02:55 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:03:46 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: logout]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:04:35 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: logout]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:04:39 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: logout]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:04:44 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: logout]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:06:00 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:06:56 --> Error: Call to a member function check_login() on null
+[Method: POST, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:09:16 --> Error: Call to a member function check_login() on null
+[Method: POST, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:09:51 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: POST, Route: do_login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:09:59 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:11:00 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:13:58 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:14:00 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:19:36 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:19:38 --> Error: Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+[Method: GET, Route: login]
+in SYSTEMPATH/Database/Database.php on line 143.
+ 1 SYSTEMPATH/Database/Database.php(61): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(84): CodeIgniter\Database\Database->load()
+ 3 SYSTEMPATH/Model.php(155): CodeIgniter\Database\Config::connect()
+ 4 APPPATH/Controllers/Auth.php(16): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Auth->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 06:19:59 --> Error: Call to a member function check_login() on null
+[Method: POST, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/faviosantos/Descargas/Telegram Desktop/ci4/public/index.php')
+CRITICAL - 2025-03-17 07:58:24 --> Error: Call to a member function check_login() on null
+[Method: POST, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 07:58:49 --> Error: Call to a member function check_login() on null
+[Method: POST, Route: do_login]
+in APPPATH/Controllers/Auth.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 07:59:23 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\AuthModel::check_login
+[Method: POST, Route: do_login]
+in SYSTEMPATH/Model.php on line 930.
+ 1 APPPATH/Controllers/Auth.php(30): CodeIgniter\Model->__call('check_login', [...])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 07:59:44 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\AuthModel::check_login
+[Method: POST, Route: do_login]
+in SYSTEMPATH/Model.php on line 930.
+ 1 APPPATH/Controllers/Auth.php(30): CodeIgniter\Model->__call('check_login', [...])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+ERROR - 2025-03-17 08:05:04 --> mysqli_sql_exception: Unknown column 'user' in 'where clause' in /opt/lampp/htdocs/ci4/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /opt/lampp/htdocs/ci4/system/Database/MySQLi/Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 /opt/lampp/htdocs/ci4/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /opt/lampp/htdocs/ci4/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /opt/lampp/htdocs/ci4/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /opt/lampp/htdocs/ci4/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /opt/lampp/htdocs/ci4/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /opt/lampp/htdocs/ci4/app/Models/AuthModel.php(23): CodeIgniter\BaseModel->first()
+#7 /opt/lampp/htdocs/ci4/app/Controllers/Auth.php(30): App\Models\AuthModel->check_login('borisfavio@gmai...', '701120')
+#8 /opt/lampp/htdocs/ci4/system/CodeIgniter.php(933): App\Controllers\Auth->do_login()
+#9 /opt/lampp/htdocs/ci4/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#10 /opt/lampp/htdocs/ci4/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /opt/lampp/htdocs/ci4/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /opt/lampp/htdocs/ci4/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /opt/lampp/htdocs/ci4/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /opt/lampp/htdocs/ci4/system/rewrite.php(44): require_once('/opt/lampp/htdo...')
+#15 {main}
+ERROR - 2025-03-17 08:05:04 --> Error en check_login: Unknown column 'user' in 'where clause'
+CRITICAL - 2025-03-17 08:25:23 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: personas]
+in SYSTEMPATH/Database/BaseConnection.php on line 941.
+ 1 SYSTEMPATH/Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH/Model.php(895): CodeIgniter\Model->builder()
+ 3 APPPATH/Models/Personas_model.php(10): CodeIgniter\Model->__get('load')
+ 4 APPPATH/Controllers/Persona.php(15): App\Models\Personas_model->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Persona->__construct()
+ 6 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:28:42 --> Error: Call to a member function get() on null
+[Method: GET, Route: personas]
+in APPPATH/Controllers/Persona.php on line 21.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:31:54 --> Error: Class "App\Models\Personas_model" not found
+[Method: GET, Route: personas]
+in APPPATH/Controllers/Persona.php on line 15.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Persona->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:31:56 --> Error: Class "App\Models\Personas_model" not found
+[Method: GET, Route: personas]
+in APPPATH/Controllers/Persona.php on line 15.
+ 1 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Persona->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:34:01 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\PersonasModel::get_persons
+[Method: GET, Route: personas]
+in SYSTEMPATH/Model.php on line 930.
+ 1 APPPATH/Controllers/Persona.php(26): CodeIgniter\Model->__call('get_persons', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:35:09 --> ErrorException: Undefined variable $titulo
+[Method: GET, Route: personas]
+in APPPATH/Views/templates/header.php on line 9.
+ 1 APPPATH/Views/templates/header.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', '/opt/lampp/htdocs/ci4/app/Views/templates/header.php', 9)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/header.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH/Views/templates/estructura.php(2): view('templates/header')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Persona.php(35): view('templates/estructura')
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:39:36 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\PersonasModel::getAll
+[Method: GET, Route: personas]
+in SYSTEMPATH/Model.php on line 930.
+ 1 APPPATH/Controllers/Persona.php(47): CodeIgniter\Model->__call('getAll', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:42:03 --> ErrorException: Attempt to read property "nombres" on array
+[Method: GET, Route: personas]
+in APPPATH/Views/personas/personas.php on line 59.
+ 1 APPPATH/Views/personas/personas.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nombres" on array', '/opt/lampp/htdocs/ci4/app/Views/personas/personas.php', 59)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/personas/personas.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('personas/personas', [], true)
+ 5 APPPATH/Views/templates/estructura.php(4): view('personas/personas')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Persona.php(49): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:45:58 --> ErrorException: Attempt to read property "nombres" on array
+[Method: GET, Route: personas]
+in APPPATH/Views/personas/persona.php on line 58.
+ 1 APPPATH/Views/personas/persona.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nombres" on array', '/opt/lampp/htdocs/ci4/app/Views/personas/persona.php', 58)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/personas/persona.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('personas/persona', [], true)
+ 5 APPPATH/Views/templates/estructura.php(4): view('personas/persona')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Persona.php(49): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:49:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "home/index.php"
+[Method: GET, Route: /]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home/index.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('home/index', [], true)
+ 3 APPPATH/Views/templates/estructura.php(4): view('home/index')
+ 4 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 7 APPPATH/Controllers/Dashboard.php(20): view('templates/estructura', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:50:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "home/index.php"
+[Method: GET, Route: /]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home/index.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('home/index', [], true)
+ 3 APPPATH/Views/templates/estructura.php(4): view('home/index')
+ 4 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 7 APPPATH/Controllers/Dashboard.php(20): view('templates/estructura', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:50:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "home/index.php"
+[Method: GET, Route: /]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home/index.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('home/index', [], true)
+ 3 APPPATH/Views/templates/estructura.php(4): view('home/index')
+ 4 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 7 APPPATH/Controllers/Dashboard.php(20): view('templates/estructura', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 08:53:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "home/index.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('home/index.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('home/index', [], true)
+ 3 APPPATH/Views/templates/estructura.php(4): view('home/index')
+ 4 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 7 APPPATH/Controllers/Dashboard.php(28): view('templates/estructura', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 09:11:42 --> ErrorException: Undefined variable $titulo
+[Method: GET, Route: persons/create]
+in APPPATH/Views/templates/header.php on line 9.
+ 1 APPPATH/Views/templates/header.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', '/opt/lampp/htdocs/ci4/app/Views/templates/header.php', 9)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/header.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH/Views/templates/estructura.php(2): view('templates/header')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Persona.php(63): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->create()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 09:26:33 --> ErrorException: Undefined variable $titulo
+[Method: GET, Route: persons/create]
+in APPPATH/Views/templates/header.php on line 9.
+ 1 APPPATH/Views/templates/header.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', '/opt/lampp/htdocs/ci4/app/Views/templates/header.php', 9)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/header.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH/Views/templates/estructura.php(2): view('templates/header')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Persona.php(63): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->create()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 09:28:27 --> ParseError: syntax error, unexpected string content ");", expecting ")"
+[Method: GET, Route: persons/create]
+in APPPATH/Controllers/Persona.php on line 73.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/ci4/app/Controllers/Persona.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Persona')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Persona')
+ 4 SYSTEMPATH/CodeIgniter.php(885): class_exists('\\App\\Controllers\\Persona', true)
+ 5 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 09:49:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "usuarios/usuarios.php"
+[Method: GET, Route: usuarios]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('usuarios/usuarios.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('usuarios/usuarios', [], true)
+ 3 APPPATH/Views/templates/estructura.php(4): view('usuarios/usuarios')
+ 4 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 7 APPPATH/Controllers/UsuarioController.php(36): view('templates/estructura', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 09:50:26 --> ErrorException: Undefined array key "user"
+[Method: GET, Route: usuarios]
+in APPPATH/Views/usuarios/index.php on line 59.
+ 1 APPPATH/Views/usuarios/index.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user"', '/opt/lampp/htdocs/ci4/app/Views/usuarios/index.php', 59)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/usuarios/index.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('usuarios/index', [], true)
+ 5 APPPATH/Views/templates/estructura.php(4): view('usuarios/index')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/UsuarioController.php(36): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 09:50:29 --> ErrorException: Undefined array key "user"
+[Method: GET, Route: usuarios]
+in APPPATH/Views/usuarios/index.php on line 59.
+ 1 APPPATH/Views/usuarios/index.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user"', '/opt/lampp/htdocs/ci4/app/Views/usuarios/index.php', 59)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/usuarios/index.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('usuarios/index', [], true)
+ 5 APPPATH/Views/templates/estructura.php(4): view('usuarios/index')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/UsuarioController.php(36): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 09:56:26 --> TypeError: view(): Argument #2 ($data) must be of type array, int given, called in /opt/lampp/htdocs/ci4/app/Views/templates/estructura.php on line 5
+[Method: GET, Route: usuarios]
+in SYSTEMPATH/Common.php on line 1161.
+ 1 APPPATH/Views/templates/estructura.php(5): view('templates/footer', 0)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 5 APPPATH/Controllers/UsuarioController.php(38): view('templates/estructura', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 09:58:48 --> ErrorException: Undefined variable $personas
+[Method: GET, Route: usuarios]
+in APPPATH/Views/personas/personas.php on line 57.
+ 1 APPPATH/Views/personas/personas.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $personas', '/opt/lampp/htdocs/ci4/app/Views/personas/personas.php', 57)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/personas/personas.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('personas/personas', [], true)
+ 5 APPPATH/Views/templates/estructura.php(4): view('personas/personas')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/UsuarioController.php(49): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:08:07 --> ErrorException: Undefined variable $titulo
+[Method: GET, Route: usuarios/crear]
+in APPPATH/Views/templates/header.php on line 9.
+ 1 APPPATH/Views/templates/header.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', '/opt/lampp/htdocs/ci4/app/Views/templates/header.php', 9)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/header.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH/Views/templates/estructura.php(2): view('templates/header')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/UsuarioController.php(57): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->create()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:10:36 --> ErrorException: Undefined variable $titulo
+[Method: GET, Route: usuarios/crear]
+in APPPATH/Views/templates/header.php on line 9.
+ 1 APPPATH/Views/templates/header.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', '/opt/lampp/htdocs/ci4/app/Views/templates/header.php', 9)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/header.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/header', [], true)
+ 5 APPPATH/Views/templates/estructura.php(2): view('templates/header')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/UsuarioController.php(60): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->create()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:13:57 --> ParseError: syntax error, unexpected token "public"
+[Method: POST, Route: usuarios/guardar]
+in APPPATH/Controllers/UsuarioController.php on line 103.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/ci4/app/Controllers/UsuarioController.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UsuarioController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UsuarioController')
+ 4 SYSTEMPATH/CodeIgniter.php(885): class_exists('\\App\\Controllers\\UsuarioController', true)
+ 5 SYSTEMPATH/CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:24:41 --> ErrorException: fopen(/opt/lampp/htdocs/ci4/writable/session/ci_session9c3545959f0e4918c1c00b2216d3e697): Failed to open stream: Permiso denegado
+[Method: GET, Route: /]
+in SYSTEMPATH/Session/Handlers/FileHandler.php on line 130.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'fopen(/opt/lampp/htdocs/ci4/writable/session/ci_session9c3545959f0e4918c1c00b2216d3e697): Failed to open stream: Permiso denegado', '/opt/lampp/htdocs/ci4/system/Session/Handlers/FileHandler.php', 130)
+ 2 SYSTEMPATH/Session/Handlers/FileHandler.php(130): fopen('/opt/lampp/htdocs/ci4/writable/session/ci_session9c3545959f0e4918c1c00b2216d3e697', 'c+b')
+ 3 [internal function]: CodeIgniter\Session\Handlers\FileHandler->read('9c3545959f0e4918c1c00b2216d3e697')
+ 4 SYSTEMPATH/Session/Session.php(896): session_start()
+ 5 SYSTEMPATH/Session/Session.php(242): CodeIgniter\Session\Session->startSession()
+ 6 SYSTEMPATH/Config/Services.php(710): CodeIgniter\Session\Session->start()
+ 7 SYSTEMPATH/Config/BaseService.php(312): CodeIgniter\Config\Services::session(Object(Config\Session), false)
+ 8 SYSTEMPATH/Config/BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('session', [...])
+ 9 SYSTEMPATH/Config/Services.php(668): CodeIgniter\Config\BaseService::getSharedInstance('session', null)
+10 SYSTEMPATH/Config/BaseService.php(321): CodeIgniter\Config\Services::session()
+11 APPPATH/Controllers/Dashboard.php(11): CodeIgniter\Config\BaseService::__callStatic('session', [])
+12 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\Dashboard->__construct()
+13 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+14 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-17 10:27:20 --> ErrorException: Array to string conversion
+[Method: GET, Route: personas]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Persona.php(50): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:28:31 --> ErrorException: Array to string conversion
+[Method: GET, Route: personas]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Persona.php(50): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:29:49 --> ErrorException: Array to string conversion
+[Method: GET, Route: personas]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Persona.php(50): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Persona->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Persona))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:30:48 --> ErrorException: Undefined variable $usuario
+[Method: GET, Route: dashboard]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Dashboard.php(28): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:30:59 --> ErrorException: Undefined variable $usuario
+[Method: GET, Route: dashboard]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Dashboard.php(28): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:31:09 --> ErrorException: Undefined variable $usuario
+[Method: GET, Route: /]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Dashboard.php(28): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:31:09 --> ErrorException: Undefined variable $usuario
+[Method: GET, Route: /]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Dashboard.php(28): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Dashboard->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:32:51 --> ErrorException: Undefined variable $usuario
+[Method: GET, Route: usuarios]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/UsuarioController.php(44): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 10:33:25 --> ErrorException: Undefined variable $usuario
+[Method: GET, Route: usuarios/crear]
+in APPPATH/Views/templates/main.php on line 94.
+ 1 APPPATH/Views/templates/main.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', '/opt/lampp/htdocs/ci4/app/Views/templates/main.php', 94)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/main.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/main', [], true)
+ 5 APPPATH/Views/templates/estructura.php(3): view('templates/main')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/UsuarioController.php(75): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\UsuarioController->create()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UsuarioController))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 11:08:50 --> ErrorException: Undefined property: App\Controllers\Grupo::$usuarioModel
+[Method: GET, Route: grupos]
+in APPPATH/Controllers/Grupo.php on line 51.
+ 1 APPPATH/Controllers/Grupo.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Grupo::$usuarioModel', '/opt/lampp/htdocs/ci4/app/Controllers/Grupo.php', 51)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 11:08:52 --> ErrorException: Undefined property: App\Controllers\Grupo::$usuarioModel
+[Method: GET, Route: grupos]
+in APPPATH/Controllers/Grupo.php on line 51.
+ 1 APPPATH/Controllers/Grupo.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Grupo::$usuarioModel', '/opt/lampp/htdocs/ci4/app/Controllers/Grupo.php', 51)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 11:09:46 --> ErrorException: Undefined variable $grupos
+[Method: GET, Route: grupos]
+in APPPATH/Views/grupos/grupos.php on line 6.
+ 1 APPPATH/Views/grupos/grupos.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $grupos', '/opt/lampp/htdocs/ci4/app/Views/grupos/grupos.php', 6)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/grupos/grupos.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('grupos/grupos', [], true)
+ 5 APPPATH/Views/templates/estructura.php(4): view('grupos/grupos')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Grupo.php(55): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Grupo->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 11:10:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "personas/index.php"
+[Method: GET, Route: grupos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('personas/index.php')
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('personas/index', [], true)
+ 3 APPPATH/Views/templates/estructura.php(4): view('personas/index')
+ 4 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 5 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 7 APPPATH/Controllers/Grupo.php(55): view('templates/estructura', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Grupo->index()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
+CRITICAL - 2025-03-17 11:11:10 --> ErrorException: Undefined variable $grupos
+[Method: GET, Route: grupos]
+in APPPATH/Views/grupos/grupos.php on line 6.
+ 1 APPPATH/Views/grupos/grupos.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $grupos', '/opt/lampp/htdocs/ci4/app/Views/grupos/grupos.php', 6)
+ 2 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/grupos/grupos.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('grupos/grupos', [], true)
+ 5 APPPATH/Views/templates/estructura.php(4): view('grupos/grupos')
+ 6 SYSTEMPATH/View/View.php(224): include('/opt/lampp/htdocs/ci4/app/Views/templates/estructura.php')
+ 7 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render('templates/estructura', [], true)
+ 9 APPPATH/Controllers/Grupo.php(55): view('templates/estructura', [...])
+10 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Grupo->index()
+11 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Grupo))
+12 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH/rewrite.php(44): require_once('/opt/lampp/htdocs/ci4/public/index.php')
