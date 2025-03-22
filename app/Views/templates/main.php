@@ -91,10 +91,12 @@
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Addons</div>
+                            <?php if ($usuariosM):?>
                             <a class="nav-link" href="<?php echo site_url('usuarios'); ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Usuarios
                             </a>
+                            <?php endif;?>
                             <a class="nav-link" href="<?php echo site_url(''); ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Aportes

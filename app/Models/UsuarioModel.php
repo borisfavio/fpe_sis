@@ -9,7 +9,7 @@ class UsuarioModel extends Model
     protected $table      = 'usuarios'; // Nombre de la tabla
     protected $primaryKey = 'id';      // Clave primaria
 
-    protected $allowedFields = ['nombre', 'email', 'password']; // Campos que se pueden insertar o actualizar
+    protected $allowedFields = ['nombre', 'email', 'password', 'rol_id']; // Campos que se pueden insertar o actualizar
 
     protected $useTimestamps = true; // Usar timestamps (created_at, updated_at)
     protected $createdField  = 'created_at';
