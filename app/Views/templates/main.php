@@ -97,6 +97,12 @@
                                 Usuarios
                             </a>
                             <?php endif;?>
+                            <?php if ($usuariosM):?>
+                            <a class="nav-link" href="<?php echo site_url('asistencia'); ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Asistencia
+                            </a>
+                            <?php endif;?>
                             <a class="nav-link" href="<?php echo site_url(''); ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Aportes

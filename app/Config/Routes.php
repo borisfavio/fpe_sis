@@ -58,3 +58,13 @@ $routes->get('/aportes/formulario', 'AportesController::mostrarFormulario');
 //$routes->get('/aportes/procesar', 'AportesController::precesarPago');
 $routes->post('/aportes/procesar', 'AportesController::precesarPago');
 $routes->get('/aportes/generar_pdf/(:num)', 'AportesController::generarPdf/$1');
+
+// Configuración de rutas asistencia
+
+    $routes->get('/asistencia', 'AsistenciaController::index');
+    $routes->get('/asistencia/grupos/(:any)', 'AsistenciaController::asistenciaGrupos/$1');
+    $routes->get('(:num)', 'AsistenciaController::show/$1');
+    $routes->post('/asistencia/guardar', 'AsistenciaController::create');
+    $routes->put('(:num)', 'AsistenciaController::update/$1');
+    $routes->delete('(:num)', 'AsistenciaController::delete/$1');
+

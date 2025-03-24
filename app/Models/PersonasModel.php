@@ -51,6 +51,15 @@ class PersonasModel extends Model
         $sql = "CALL ObtenerBeneficiariosPorTutor(?)";
         return $this->db->query($sql, [$tutor_id])->getResultArray(); // Ejecutar procedimiento almacenado
     }
+    
+    public function getPersonasGrupo($grupo_id)
+    {
+        if (empty($grupo_id)) {
+            return null; // O lanzar una excepción
+        }
+        //otra opcion
+        return $this->where('group_id', $grupo_id)->findAll(); // Ejecutar procedimiento almacenado
+    }
 
     public function updatePerson($id, $data)
     {

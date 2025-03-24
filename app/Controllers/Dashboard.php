@@ -6,7 +6,7 @@ use Config\Services;
 class Dashboard extends BaseController
 {
     protected $session;
-protected   $authService;
+    protected   $authService;
 
     public function __construct() {
         helper('url'); // Agrega esta línea para cargar la biblioteca de URL

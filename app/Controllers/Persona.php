@@ -3,25 +3,32 @@
 namespace App\Controllers;
 
 use App\Models\PersonasModel;
+use Config\Services;
 
 class Persona extends BaseController
 {
     protected $personaModel;
     protected $session;
+    protected $authService;
+    protected $permisos;
 
 	public function __construct() {
         
         helper('url'); // Agrega esta línea para cargar la biblioteca de URL
         $this->personaModel = new PersonasModel();
-        $this->session = \Config\Services::session(); 
+        $this->session = \Config\Services::session();
+        $this->permisos = Services::AutenticarUsuario();
     }
 
     public function index() {
-        //var_dump($this->session->get('login')); exit;
+        //var_dump($this->session->permisos); exit;
         if ($this->session->get('login')) {
+            $usuarioId = $this->session->get('usuario')['id'];
             $datos_menu = ['menu' => 'Inicio'];
-            $contenido = 'personas/personas'; 
-            $lib = ['script' => 'mi-script.js']; 
+            $contenido = 'personas/personas';
+            $lib = ['script' => 'mi-script.js'];
+            $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
+            //var_dump($usuariosM); exit;
             /*$data['lib'] = 0;
             $data['datos_menu'] = null;
             //la cantidad y listado de notificaciones
@@ -45,7 +52,8 @@ class Persona extends BaseController
             'contenido' => $contenido,
             'lib' => $lib,
             'personas' => $this->personaModel->getPersons(),
-            'usuario' => $this->session->get('usuario')
+            'usuario' => $this->session->get('usuario'),
+            'usuariosM' => $usuariosM,
         ];
             return view('templates/estructura', $data);
         } else {
