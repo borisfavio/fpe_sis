@@ -1,0 +1,6 @@
+# Ignorar archivos de log
+*.log
+
+# Ignorar app
+
+app/Config/Database.php
