@@ -19,8 +19,8 @@ $routes->get('/personas', 'Persona::index');
 $routes->get('/persons/create', 'Persona::create');
 $routes->post('/persona/store', 'Persona::store');
 $routes->get('/persona/store', 'Persona::store');
-$route['persons/edit/(:any)'] = 'persona/edit/$1';
-$route['persons/update'] = 'persona/update';
+$routes->get('persons/edit/(:any)', 'Persona::edit/$1');
+$routes->post('persona/update', 'Persona::update');
 $route['persons/delete/(:any)'] = 'persona/delete/$1';
 
 //Ruta para Modulo de Usuarios
@@ -64,7 +64,7 @@ $routes->get('/aportes/generar_pdf/(:num)', 'AportesController::generarPdf/$1');
     $routes->get('/asistencia', 'AsistenciaController::index');
     $routes->get('/asistencia/grupos/(:any)', 'AsistenciaController::asistenciaGrupos/$1');
     $routes->get('(:num)', 'AsistenciaController::show/$1');
-    $routes->post('/asistencia/guardar', 'AsistenciaController::create');
+    $routes->post('/asistencia/registrar', 'AsistenciaController::registrar');
     $routes->put('(:num)', 'AsistenciaController::update/$1');
     $routes->delete('(:num)', 'AsistenciaController::delete/$1');
 

@@ -7,41 +7,33 @@ class Dashboard extends BaseController
 {
     protected $session;
     protected   $authService;
+    protected $permisos;
+    protected $datos;
 
     public function __construct() {
         helper('url'); // Agrega esta línea para cargar la biblioteca de URL
         $this->session = \Config\Services::session();
-        
+        $this->permisos = Services::AutenticarUsuario();
+        //cargar datos
+        $this->datos = [
+            'titulo' => 'FPE - Inicio',
+            'datos_menu' => $this->permisos->getUserPermissions($this->session->get('usuario')['id']),
+            'usuario' => $this->session->get('usuario'),
+        ];
+
     }
 
     public function index()
     {
         
         if ($this->session->get('login')) {
-
-            $usuarioId = $this->session->get('usuario')['id'];
-            
-            $permisos = Services::AutenticarUsuario();
-            
-            $usuariosM = $permisos->hasPermission($usuarioId,'usuarios');
-            
-
-            $usuario = $this->session->get('usuario');
-            
-            
-            $datos_menu = $permisos->getUserPermissions($usuarioId); // Datos para la vista 'templates/main'
             $contenido = 'dashboard'; // Vista dinámica para el contenido
             $lib = ['script' => 'mi-script.js']; // Datos para la vista 'templates/footer'
-
-            $data = [
-                'titulo' => 'FPE - Inicio',
-                'datos_menu' => $datos_menu,
-                'contenido' => $contenido,
-                'lib' => $lib,
-                'usuario' => $usuario,
-                'usuariosM' => $usuariosM,
-            ];
-
+            //cargar datso por modulo
+            $data = $this->datos;
+            $data['contenido'] =$contenido;
+            $data['lib'] = $lib;
+            //var_dump($data['datos_menu']); exit;
             return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');

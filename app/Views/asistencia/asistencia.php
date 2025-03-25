@@ -1,98 +1,57 @@
         <!-- start: Content -->
         <div id="layoutSidenav_content">
-<body class="container mt-4">
-    <h2 class="text-center">Registro de Asistencia</h2>
-    <button class="btn btn-success mb-3" id="marcarTodos">Marcar Todos Presentes</button>
-    <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                      <thead>
+        
+<h1>Registrar Asistencia</h1>
+
+<form action="<?= base_url('asistencia/registrar') ?>" method="post">
+    <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha:</label>
+        <input type="date" class="form-control" id="fecha" name="fecha" value="<?= $fecha_actual ?>" required>
+        <input type="text" name="grupo_id" value="<?= $idGrupo ?>">
+    </div>
+    
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
             <tr>
+                <th>Matrícula</th>
                 <th>Nombre</th>
-                <th>Estado</th>
+                <th>Grupo</th>
+                <th>Asistencia</th>
+                <th>Observaciones</th>
             </tr>
         </thead>
         <tfoot>
         <tr>
+                <th>Matrícula</th>
                 <th>Nombre</th>
-                <th>Estado</th>
+                <th>Grupo</th>
+                <th>Asistencia</th>
+                <th>Observaciones</th>
             </tr>
         </tfoot>
-        <tbody id="tablaAsistencia">
-        <?php foreach ($personas as $persona): ?>
-            <tr data-beneficiario-id="<?= esc($persona['id']) ?>">
-                <td><?= esc($persona['nombres']) ?></td>
+        <tbody>
+            <?php foreach ($alumnos as $alumno): ?>
+            <tr>
+                <td><input type="hidden" name="id_<?= $alumno['id'] ?>" value="<?= $alumno['id'] ?>" class="form-control">
+                    <?= $alumno['codigo'] ?>
+            </td>
+
+                <td><?= $alumno['nombres'] ?></td>
+                <td><?= $alumno['id'] ?></td>
                 <td>
-                    <button class="btn estado-toggle btn-secondary" data-estado="Falta">Falta</button>
+                    <select name="asistencia_<?= $alumno['id'] ?>" class="form-select">
+                        <option value="presente">Presente</option>
+                        <option value="ausente">Ausente</option>
+                        <option value="justificado">Justificado</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="observacion_<?= $alumno['id'] ?>" class="form-control">
                 </td>
             </tr>
             <?php endforeach; ?>
-            <tr>
-                <td>María Gómez</td>
-                <td>
-                    <button class="btn estado-toggle btn-secondary" data-estado="Falta">Falta</button>
-                </td>
-            </tr>
         </tbody>
     </table>
-    <button class="btn btn-primary" id="guardarAsistencia">Guardar Asistencia</button>
     
-    <script>
-        $(document).ready(function () {
-            const estados = ["Falta", "Presente", "Permiso"];
-            
-            $('.estado-toggle').click(function () {
-                let row = $(this).closest('tr');
-                let beneficiarioId = row.data('beneficiario-id');
-                let grupoId = row.data('<?= esc($idGrupo) ?>');
-                let estadoActual = $(this).data('estado');
-                let nuevoEstado = estados[(estados.indexOf(estadoActual) + 1) % estados.length];
-                $(this).data('estado', nuevoEstado);
-                $(this).text(nuevoEstado);
-                
-                if (nuevoEstado === "Presente") {
-                    $(this).removeClass('btn-secondary btn-warning').addClass('btn-success');
-                } else if (nuevoEstado === "Permiso") {
-                    $(this).removeClass('btn-success btn-secondary').addClass('btn-warning');
-                } else {
-                    $(this).removeClass('btn-success btn-warning').addClass('btn-secondary');
-                }
-                
-                // Enviar actualización a la base de datos
-                $.fetch('asistencia/guardar', {
-                    beneficiario_id: beneficiarioId,
-                    estado: nuevoEstado,
-                    grupo_id: grupoId
-                }, function (response) {
-                    console.log(response);
-                });
-            });
-            
-            $('#marcarTodos').click(function () {
-                $('.estado-toggle').each(function () {
-                    $(this).data('estado', "Presente");
-                    $(this).text("Presente");
-                    $(this).removeClass('btn-secondary btn-warning').addClass('btn-success');
-                });
-            });
-
-            $('#guardarAsistencia').click(function () {
-                
-                let asistencia = [];
-                $('#tablaAsistencia tr').each(function () {
-                    let nombre = $(this).find('td:first').text();
-                    let estado = $(this).find('.estado-toggle').data('estado');
-                    
-                    if (nombre) {
-                        asistencia.push({ nombre, estado });
-                    }
-                });
-
-                $.post('asistencia/guardar', { asistencia: JSON.stringify(asistencia) }, function (response) {
-                    alert(response);
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+    <button type="submit" class="btn btn-primary">Guardar Asistencias</button>
+</form>

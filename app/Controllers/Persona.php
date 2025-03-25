@@ -24,10 +24,10 @@ class Persona extends BaseController
         //var_dump($this->session->permisos); exit;
         if ($this->session->get('login')) {
             $usuarioId = $this->session->get('usuario')['id'];
-            $datos_menu = ['menu' => 'Inicio'];
+            $datos_menu = $this->permisos->getUserPermissions($this->session->get('usuario')['id']);
             $contenido = 'personas/personas';
             $lib = ['script' => 'mi-script.js'];
-            $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
+            
             //var_dump($usuariosM); exit;
             /*$data['lib'] = 0;
             $data['datos_menu'] = null;
@@ -61,6 +61,53 @@ class Persona extends BaseController
 
         }
        
+    }
+
+    public function edit($id){
+              // Lógica para mostrar el formulario de creación
+		if ($this->session->get('login')) {
+            $datos_menu = $this->permisos->getUserPermissions($this->session->get('usuario')['id']);
+            $contenido = 'personas/edit_person'; // Vista dinámica para el contenido
+            $lib = ['script' => 'mi-script.js']; // Datos para la vista 'templates/footer'
+
+            $data = [
+                'titulo' => 'FPE - Beneficarios',
+                'datos_menu' => $datos_menu,
+                'contenido' => $contenido,
+                'lib' => $lib,
+                'usuario' => $this->session->get('usuario'),
+                'beneficiario' => (object)$this->personaModel->getPersonById($id),
+            ];
+            $objeto = (object)$data['beneficiario'];
+            //var_dump($data['beneficiario']); exit;
+            //var_dump($objeto); exit;
+
+            return view('templates/estructura', $data);
+        } else {
+            return redirect()->to('/logout');
+
+        }
+    }
+
+    public function update() {
+        // Lógica para procesar el formulario de edición
+        // Obtener los datos del formulario
+        $id = $this->request->getPost('id');
+        $data = array(
+            'local_id' => $this->request->getPost('local_id'),
+            'account_name' => $this->request->getPost('account_name'),
+            'estado' => $this->request->getPost('estado'),
+            'birthdate' => $this->request->getPost('birthdate'),
+            'caregiver_birthdate' => $this->request->getPost('caregiver_birthdate'),
+            'gender' => $this->request->getPost('gender'),
+            'phone' => $this->request->getPost('phone'),
+            'primary_caregiver' => $this->request->getPost('primary_caregiver'),
+            'religious_affiliation' => $this->request->getPost('religious_affiliation'),
+            'street' => $this->request->getPost('street')
+        );
+
+        $this->personaModel->update_person($id, $data);
+        redirect('personas');
     }
 
     public function create() {

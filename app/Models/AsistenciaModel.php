@@ -6,8 +6,22 @@ use CodeIgniter\Model;
 
 class AsistenciaModel extends Model
 {
-    protected $table      = 'asistencia';
+    protected $table      = 'asistencias';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['estado', 'fecha', 'beneficiario_id', 'grupo_id'];
+    protected $allowedFields = ['beneficiario_id', 'fecha', 'estado', 'observaciones'];
     protected $useTimestamps = false;
+
+    //regsitrar asistencia
+    public function registrarAsistencia($data)
+    {
+        return $this->insert($data);
+    }
+    //obtener asistencia por fecha
+    public function obtenerAsistenciasPorFecha($fecha)
+    {
+        return $this->select('asistencias.*, alumnos.nombre, alumnos.matricula, alumnos.grupo')
+                    ->join('alumnos', 'alumnos.id = asistencias.alumno_id')
+                    ->where('fecha', $fecha)
+                    ->findAll();
+    }
 }

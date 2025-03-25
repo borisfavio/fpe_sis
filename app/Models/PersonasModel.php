@@ -62,7 +62,8 @@ class PersonasModel extends Model
     }
 
     public function updatePerson($id, $data)
-    {
+    {   
+        var_dump($data); exit;
         return $this->update($id, $data); // Actualiza el registro con el ID dado
     }
 

@@ -3,21 +3,20 @@
              <div class="panel box-shadow-none content-header">
                   <div class="panel-body">
                     <div class="col-md-12">
-                        <h3 class="animated fadeInLeft">Nuevo Miembro</h3>
+                        <h3 class="animated fadeInLeft">Nuevo Beneficiario</h3>
                         <p class="animated fadeInDown">
                           Ministerio <span class="fa-angle-right fa"></span> Agregar Persona
                         </p>
                     </div>
                   </div>
               </div>
-            <div class="col-md-12">
+              <div class="col-md-12">
                 <div class="panel">
                     <div class="panel-heading"></div>
                     <div class="panel-body">
                     <form action="<?php echo site_url('persona/update'); ?>" method="post">
-        <input type="hidden" name="id" value="<?php echo $beneficiario->id; ?>">
-
-        <label for="local_id">Local ID:</label>
+       <input type="hidden" name="id" value="<?php echo $beneficiario->id; ?>">
+       <label for="local_id">Local ID:</label>
         <input type="text" name="local_id" value="<?php echo $beneficiario->codigo; ?>" required>
         <br>
 
@@ -62,8 +61,9 @@
 
         <label for="street">Calle:</label>
         <input type="text" name="street" value="<?php echo $beneficiario->street; ?>">
-        <br>
 
+        <br>
+      
         <button type="submit">Guardar Cambios</button>
     </form>
 

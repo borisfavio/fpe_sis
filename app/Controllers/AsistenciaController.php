@@ -30,30 +30,20 @@ class AsistenciaController extends ResourceController
         if ($this->session->get('login')) {
             $usuarioId = $this->session->get('usuario')['id'];
             $usuario = $this->session->get('usuario');
-            $datos_menu = ['menu' => 'Inicio'];
+            $datos_menu = $this->permisos->getUserPermissions($usuarioId);
             $contenido = 'asistencia/asistencia_grupos';
             $lib = ['script' => 'mi-script.js'];
             $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
-            //var_dump($usuario['id_empleado']); exit;
-            $grupos = $this->grupoModel->get_grupos_tutor($usuario['id_empleado']);
-            //var_dump($grupos); exit;
-            /*$data['lib'] = 0;
-            $data['datos_menu'] = null;
+             $grupos = $this->grupoModel->get_grupos_tutor($usuario['id_tutor']);
+            
+            /*
             //la cantidad y listado de notificaciones
             $data['cantidadN'] = 2;
-            $data['personas'] = $this->personaModel->get_persons();
-            $data['titulo'] = "Dashboard";
             $data['thema'] = "main";
             $data['descripcion'] = "ventas";
-            $data['contenido'] = 'personas/personas';
-            //$usrid = $this->session->userdata('id_usuario');
             $data['chatUsers'] = 1;
             $data['getUserDetails'] = "admin";
-            //$data['username'] = $this->session->userdata('username');*/
-             // Datos para la vista 'templates/main'
-        // Vista dinámica para el contenido
-        // Datos para la vista 'templates/footer'
-
+            */
         $data = [
             'titulo' => 'FPE - Asistencia',
             'datos_menu' => $datos_menu,
@@ -65,6 +55,7 @@ class AsistenciaController extends ResourceController
             'grupos' => $grupos,
             'usuario' => $this->session->get('usuario'),
         ];
+        //var_dump($data); exit;
             return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');
@@ -79,7 +70,7 @@ class AsistenciaController extends ResourceController
             $usuario = $this->session->get('usuario');
             //var_dump($usuario); exit;
             $personas = $this->personaModel->getPersonasGrupo($idG);
-            $datos_menu = ['menu' => 'Inicio'];
+            $datos_menu = $this->permisos->getUserPermissions($usuarioId);
             $contenido = 'asistencia/asistencia';
             $lib = ['script' => 'mi-script.js'];
             $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
@@ -109,9 +100,10 @@ class AsistenciaController extends ResourceController
             'usuario' => $this->session->get('usuario'),
             'usuariosM' => $usuariosM,
             'asistencias' => $this->model->findAll(),
-            'personas' => $personas,
+            'alumnos' => $personas,
             'usuario' => $this->session->get('usuario'),
             'idGrupo' => $idG,
+            'fecha_actual' => date('Y-m-d')
         ];
         //var_dump($data); exit;
             return view('templates/estructura', $data);
@@ -125,6 +117,41 @@ class AsistenciaController extends ResourceController
     {
         $data = $this->model->find($id);
         return $data ? $this->respond($data) : $this->failNotFound('Asistencia no encontrada');
+    }
+
+    public function registrar()
+    {
+        $model = new AsistenciaModel();
+        $alumnoModel = new PersonasModel();
+        
+        $fecha = $this->request->getPost('fecha');
+        $alumnos = $alumnoModel->where('group_id', $this->request->getPost('grupo_id'))->findAll();
+        
+        //var_dump($alumnos); exit;
+        foreach ($alumnos as $alumno) {
+            $estado = $this->request->getPost('asistencia_'.$alumno['id']) ?? 'ausente';
+            
+            $data = [
+                'beneficiario_id' => $alumno['id'],
+                'fecha' => $fecha,
+                'estado' => $estado,
+                'observaciones' => $this->request->getPost('observacion_'.$alumno['id'])
+            ];
+            
+
+            // Verificar si ya existe registro para evitar duplicados
+            $existe = $model->where('beneficiario_id', $alumno['id'])
+                          ->where('fecha', $fecha)
+                          ->first();
+                          //var_dump($existe); exit;
+            if ($existe) {
+                $model->update($existe['id'], $data);
+            } else {
+                $model->registrarAsistencia($data);
+            }
+        }
+        
+        return redirect()->to('/asistencia')->with('success', 'Asistencias registradas correctamente');
     }
 
     public function create()

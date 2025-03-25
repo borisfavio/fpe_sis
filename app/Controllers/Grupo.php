@@ -4,18 +4,29 @@ namespace App\Controllers;
 
 use App\Models\GrupoModel;
 use App\Models\PersonasModel;
+use Config\Services;
 
 class Grupo extends BaseController
 {
     protected $grupoModel;
     protected $session;
     protected $personaModel;
+    protected $permisos;
+    protected $datos;
 
 	public function __construct() {
         $this->grupoModel = new GrupoModel();
         $this->personaModel = new PersonasModel();
-        helper('url'); 
+
+        helper('url'); // Agrega esta línea para cargar la biblioteca de URL
         $this->session = \Config\Services::session();
+        $this->permisos = Services::AutenticarUsuario();
+        //cargar datos
+        $this->datos = [
+            'titulo' => 'FPE - Inicio',
+            'datos_menu' => $this->permisos->getUserPermissions($this->session->get('usuario')['id']),
+            'usuario' => $this->session->get('usuario'),
+        ];
         
         
     }
@@ -23,39 +34,15 @@ class Grupo extends BaseController
     public function index() {
         if ($this->session->get('login')) {
             $usuario = $this->session->get('usuario');
-            $datos_menu = ['menu' => 'Inicio'];
             $contenido = 'grupos/grupos'; 
             $lib = ['script' => 'mi-script.js'];
             $grupos = $this->grupoModel->get_grupos_tutor($usuario['id_tutor']);
-            /*
-            //la cantidad y listado de notificaciones
-            $data['cantidadN'] = 2;
-            $data['thema'] = "main";
-            $data['descripcion'] = "ventas";
-            //$usrid = $this->session->userdata('id_usuario');
-            $data['chatUsers'] = 1;
-            $data['getUserDetails'] = "admin";
-            //$data['username'] = $this->session->userdata('username');
-            //var_dump($data); exit;
-            $data['cantidadN'] = 2;
-            
-            $data['titulo'] = "FPE-Grupos";
-            $data['thema'] = "main";
-            $data['descripcion'] = "ventas";
-            $data['contenido'] = 'grupos/grupos';
-            $data['chatUsers'] = 1;
-            $data['getUserDetails'] = "admin";
-            $data['username'] = $this->session->userdata('username');
-            */
-            $data = [
-                'titulo' => 'FPE - Usuarios',
-                'datos_menu' => $datos_menu,
-                'contenido' => $contenido,
-                'lib' => $lib,
-                'usuarios' => 'usuario',
-                'usuario' => $this->session->get('usuario'),
-                'grupos' => $grupos,
-            ];
+
+            $data =$this->datos;
+            $data['contenido'] = $contenido;
+            $data['lib'] = $lib;
+            $data['grupos'] = $grupos;
+
                 return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');
@@ -67,8 +54,7 @@ class Grupo extends BaseController
 
     public function tutor($grupoid) {
         if ($this->session->get('login')) {
-            $datos_menu = ['menu' => 'Inicio'];
-            $contenido = 'grupos/grupos_tutor'; 
+            $contenido = 'grupos/grupos_tutor';
             $lib = ['script' => 'mi-script.js'];
             $personas = $this->grupoModel->ObtenerBeneficiariosTutor($grupoid);
             /*
@@ -76,14 +62,11 @@ class Grupo extends BaseController
             $data['chatUsers'] = 1;
             $data['getUserDetails'] = "admin";
             */
-            $data = [
-                'titulo' => 'FPE - Grupos',
-                'datos_menu' => $datos_menu,
-                'contenido' => $contenido,
-                'lib' => $lib,
-                'personas' => $personas,
-                'usuario' => $this->session->get('usuario'),
-            ];
+            $data = $this->datos;
+            $data['contenido'] = $contenido;
+            $data['lib'] = $lib;
+            $data['personas'] = $personas;
+        
             return view('templates/estructura', $data);
         } else {
             redirect('logout');

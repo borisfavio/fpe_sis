@@ -54,7 +54,7 @@ class AuthService {
     }
 
     // Lista completa de módulos con acceso predeterminado en `false`
-    $allModules = ['inicio', 'usuarios', 'aportes', 'reportes', 'configuracion'];
+    $allModules = ['inicio', 'usuarios', 'asistencia','aportes', 'reportes', 'configuracion'];
     
     // Generar el array final con `false` por defecto
     $datos_menu = array_fill_keys($allModules, false);

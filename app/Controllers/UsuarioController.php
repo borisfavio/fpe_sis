@@ -3,17 +3,27 @@
 namespace App\Controllers;
 
 use App\Models\UsuarioModel;
+use Config\Services;
 
 class UsuarioController extends BaseController
 {
     protected $usuarioModel;
     protected $session;
+    protected $permisos;
+    protected $datos;
 
     public function __construct()
     {
         $this->usuarioModel = new UsuarioModel();
-        helper('url'); 
+        helper('url'); // Agrega esta línea para cargar la biblioteca de URL
         $this->session = \Config\Services::session();
+        $this->permisos = Services::AutenticarUsuario();
+        //cargar datos
+        $this->datos = [
+            'titulo' => 'FPE - Usuarios',
+            'datos_menu' => $this->permisos->getUserPermissions($this->session->get('usuario')['id']),
+            'usuario' => $this->session->get('usuario'),
+        ];
     }
 
 
@@ -21,8 +31,7 @@ class UsuarioController extends BaseController
     public function index() {
         //var_dump($this->session->get('login')); exit;
         if ($this->session->get('login')) {
-            $datos_menu = ['menu' => 'Inicio'];
-            $contenido = 'usuarios/index'; 
+            $contenido = 'usuarios/index';
             $lib = ['script' => 'mi-script.js'];
             /*
             //la cantidad y listado de notificaciones
@@ -34,14 +43,10 @@ class UsuarioController extends BaseController
             $data['getUserDetails'] = "admin";
             //$data['username'] = $this->session->userdata('username');
             //var_dump($data); exit;*/
-            $data = [
-                'titulo' => 'FPE - Usuarios',
-                'datos_menu' => $datos_menu,
-                'contenido' => $contenido,
-                'lib' => $lib,
-                'usuarios' => $this->usuarioModel->findAll(),
-                'usuario' => $this->session->get('usuario')
-            ];
+            $data = $this->datos;
+            $data['contenido'] = $contenido;
+            $data['lib'] = $lib;
+            $data['usuarios'] = $this->usuarioModel->findAll();
                 return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');
@@ -52,8 +57,7 @@ class UsuarioController extends BaseController
 	public function create() {
         // Lógica para mostrar el formulario de creación
         if ($this->session->get('login')) {
-            $datos_menu = ['menu' => 'Inicio'];
-            $contenido = 'usuarios/create_user'; 
+            $contenido = 'usuarios/create_user';
             $lib = ['script' => 'mi-script.js'];
             /*
             //la cantidad y listado de notificaciones
@@ -65,14 +69,10 @@ class UsuarioController extends BaseController
             $data['getUserDetails'] = "admin";
             //$data['username'] = $this->session->userdata('username');
             //var_dump($data); exit;*/
-            $data = [
-                'titulo' => 'FPE - Usuarios',
-                'datos_menu' => $datos_menu,
-                'contenido' => $contenido,
-                'lib' => $lib,
-                'usuarios' => $this->usuarioModel->findAll(),
-                'usuario' => $this->session->get('usuario')
-            ];
+            $data = $this->datos;
+            $data['contenido'] = $contenido;
+            $data['lib'] = $lib;
+
                 return view('templates/estructura', $data);
             
 	

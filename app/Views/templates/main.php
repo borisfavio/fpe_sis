@@ -97,7 +97,7 @@
                                 Usuarios
                             </a>
                             <?php endif;?>
-                            <?php if ($usuariosM):?>
+                            <?php if ($datos_menu['asistencia']):?>
                             <a class="nav-link" href="<?php echo site_url('asistencia'); ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Asistencia
