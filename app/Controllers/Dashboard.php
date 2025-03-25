@@ -25,7 +25,7 @@ class Dashboard extends BaseController
 
     public function index()
     {
-        
+       // var_dump($this->session->get('login')); exit;
         if ($this->session->get('login')) {
             $contenido = 'dashboard'; // Vista dinámica para el contenido
             $lib = ['script' => 'mi-script.js']; // Datos para la vista 'templates/footer'

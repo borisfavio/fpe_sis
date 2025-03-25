@@ -17,7 +17,7 @@
 
                     <div class="card">
                       <div class="card-header">
-                      <div class="card-title">Agregar Beneficiario</div>
+                      <div class="card-title">Agregar Usuario</div>
                       </div>
                       <div class="card-body">
                       <?php if (session('errors')): ?>
@@ -38,7 +38,7 @@
                       <label for="password">Contraseña:</label>
                       <input type="password" name="password" id="password">
                       <br>
-                      <button type="submit">Guardar</button>
+                      <button class="btn btn-primary" type="submit">Guardar</button>
                     </form>
                       </div>
                     </div>

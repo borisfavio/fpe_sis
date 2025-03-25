@@ -37,7 +37,7 @@ class Grupo extends BaseController
             $contenido = 'grupos/grupos'; 
             $lib = ['script' => 'mi-script.js'];
             $grupos = $this->grupoModel->get_grupos_tutor($usuario['id_tutor']);
-
+            //var_dump($grupos); exit;
             $data =$this->datos;
             $data['contenido'] = $contenido;
             $data['lib'] = $lib;
@@ -57,6 +57,7 @@ class Grupo extends BaseController
             $contenido = 'grupos/grupos_tutor';
             $lib = ['script' => 'mi-script.js'];
             $personas = $this->grupoModel->ObtenerBeneficiariosTutor($grupoid);
+            //var_dump($personas); exit;
             /*
             $data['cantidadN'] = 2;
             $data['chatUsers'] = 1;

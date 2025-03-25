@@ -16,9 +16,14 @@ class Auth extends BaseController {
         $this->authModel = new AuthModel(); // Inicializar el modelo
     }
 
-    public function login() {
+    public function login()
+    {
         // Cargar la vista de inicio de sesión
-        return view('login');
+        if ($this->session->get('login')) {
+            return redirect('dashboard');
+        } else {
+            return view('login');
+        }
     }
 
     public function do_login() {
