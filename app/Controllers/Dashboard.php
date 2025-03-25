@@ -24,12 +24,12 @@ protected   $authService;
             $permisos = Services::AutenticarUsuario();
             
             $usuariosM = $permisos->hasPermission($usuarioId,'usuarios');
-            //var_dump($codigo); exit;
+            
 
             $usuario = $this->session->get('usuario');
             
             
-            $datos_menu = ['menu' => 'Inicio']; // Datos para la vista 'templates/main'
+            $datos_menu = $permisos->getUserPermissions($usuarioId); // Datos para la vista 'templates/main'
             $contenido = 'dashboard'; // Vista dinámica para el contenido
             $lib = ['script' => 'mi-script.js']; // Datos para la vista 'templates/footer'
 

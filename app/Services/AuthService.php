@@ -29,6 +29,46 @@ class AuthService {
         
         return in_array($permission['id'], $permissionIds);
     }
+
+    //funcion que devuelve datos de menu
+    public function getUserPermissions($userId)
+{
+    $user = $this->userModel->find($userId);
+
+    if (!$user) {
+        return [];
+    }
+
+    // Obtener los permisos del rol del usuario
+    $permissions = $this->rolePermissionModel->where('role_id', $user['rol_id'])->findAll();
+    $permissionIds = array_column($permissions, 'permission_id');
+
+    // Obtener los nombres de los permisos
+    $permissionModel = new \App\Models\PermissionModel();
+    $permissionList = $permissionModel->whereIn('id', $permissionIds)->findAll();
+
+    // Formatear el resultado como array asociativo
+    $permissionsArray = [];
+    foreach ($permissionList as $perm) {
+        $permissionsArray[$perm['name']] = true;
+    }
+
+    // Lista completa de módulos con acceso predeterminado en `false`
+    $allModules = ['inicio', 'usuarios', 'aportes', 'reportes', 'configuracion'];
+    
+    // Generar el array final con `false` por defecto
+    $datos_menu = array_fill_keys($allModules, false);
+    
+    // Activar los permisos obtenidos del usuario
+    foreach ($permissionsArray as $module => $hasAccess) {
+        if (array_key_exists($module, $datos_menu)) {
+            $datos_menu[$module] = $hasAccess;
+        }
+    }
+
+    return $datos_menu;
+}
+
 }
 
 ?>
