@@ -15,7 +15,7 @@
               <div class="panel">
                 <div class="panel-heading">
                   <div class="row">
-                    <div class="col-3">
+                    <div class="col">
                       <div>
                         <a href="<?= site_url('persons/create'); ?>" class=" btn btn-primary mt-4" value="primary">
                           Agregar Beneficiario <i class="fa fa-plus" aria-hidden="true"></i>
@@ -33,35 +33,29 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>Name</th>
-                          <th>Local ID</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                          <th>Options</th>
+                          <th>CODIGO</th>
+                          <th>NOMBRES</th>
+                          <th>TELEFONO</th>
+                          <th>ESTADO</th>
+                          <th>OCIONES</th>
                         </tr>
                       </thead>
                       <tfoot>
                         <tr>
-                          <th>Name</th>
-                          <th>Local ID</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
-                          <th>Options</th>
+                        <th>CODIGO</th>
+                          <th>NOMBRES</th>
+                          <th>TELEFONO</th>
+                          <th>ESTADO</th>
+                          <th>OCIONES</th>
                         </tr>
                       </tfoot>
                       <tbody>
                         <?php foreach ($personas as $persona): ?>
                           <tr>
-                            <td><?= esc($persona['nombres']) ?></td>
                             <td><?= esc($persona['codigo']) ?></td>
-                            <td><?= ($persona['estado'] == 1) ? 'Activo' : 'Inactivo' ?></td>
-                            <td><?= esc($persona['id']) ?></td>
-                            <td><?= esc($persona['birthdate']) ?></td>
+                            <td><?= esc($persona['nombres']) ?></td>
                             <td><?= esc($persona['phone']) ?></td>
+                            <td><?= ($persona['estado'] == 1) ? 'Activo' : 'Inactivo' ?></td>
                             <td>
                               <a href="https://wa.me/591<?= $persona['phone'] ?>" target="_blank" class="btn btn-circle btn-outline btn-mn btn-user">
                                 <span class="fa fa-edit"></span>

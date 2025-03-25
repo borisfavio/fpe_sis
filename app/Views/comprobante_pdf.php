@@ -59,14 +59,14 @@
 
     <!-- Detalles del comprobante -->
     <div class="content">
-    <?php foreach ($comprobantes as $comprobante):?>
+    
         <p><strong>Fecha:</strong> <?= esc($comprobante['fecha']) ?></p>
         <p><strong>Recibí de:</strong> <?= esc($comprobante['nombre_pagador']) ?></p>
         <div class="divider"></div>
 
         <h4 class="text-center">DETALLE DE PAGO:</h4>
         <table class="table">
-            
+        <?php foreach ($comprobantes as $comprobante):?>
             <tr>
                 <td><strong>Beneficiario:</strong></td>
                 <td class="text-right"><?= esc($comprobante['codigo_beneficiario']) ?></td>

@@ -19,9 +19,50 @@ class AportesController extends BaseController
         $this->model = new AportesModel();
     }
 
-    public function listar()
-    {
-        return view('aportes/lista');
+    public function listar() {
+        if ($this->session->get('login')) {
+            $usuario = $this->session->get('usuario');
+            $datos_menu = ['menu' => 'Inicio'];
+            $contenido = 'aportes/lista';
+            $lib = ['script' => 'mi-script.js'];
+            $pagos = $this->model->listarComprobantes();
+            var_dump($pagos); exit;
+            /*
+            //la cantidad y listado de notificaciones
+            $data['cantidadN'] = 2;
+            $data['thema'] = "main";
+            $data['descripcion'] = "ventas";
+            //$usrid = $this->session->userdata('id_usuario');
+            $data['chatUsers'] = 1;
+            $data['getUserDetails'] = "admin";
+            //$data['username'] = $this->session->userdata('username');
+            //var_dump($data); exit;
+            $data['cantidadN'] = 2;
+            
+            $data['titulo'] = "FPE-Grupos";
+            $data['thema'] = "main";
+            $data['descripcion'] = "ventas";
+            $data['contenido'] = 'grupos/grupos';
+            $data['chatUsers'] = 1;
+            $data['getUserDetails'] = "admin";
+            $data['username'] = $this->session->userdata('username');
+            */
+            $data = [
+                'titulo' => 'FPE - Usuarios',
+                'datos_menu' => $datos_menu,
+                'contenido' => $contenido,
+                'lib' => $lib,
+                'usuarios' => 'usuario',
+                'usuario' => $this->session->get('usuario'),
+                'pagos' => $pagos,
+            ];
+            
+                return view('templates/estructura', $data);
+        } else {
+            return redirect()->to('/logout');
+        }
+           
+       
     }
 
     public function mostrarFormulario()
