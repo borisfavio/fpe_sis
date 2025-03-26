@@ -4,40 +4,32 @@
     <meta charset="UTF-8">
     <title>Comprobante</title>
     <style>
-        /* Resetear márgenes y padding */
         body, html {
             margin: 2;
             padding: 1;
-            width: 76mm; /* Ancho del ticket */
+            width: 76mm;
             font-family: Arial, sans-serif;
-            font-size: 12px; /* Tamaño de fuente */
+            font-size: 12px;
         }
-        /* Contenedor principal */
         .ticket {
             width: 100%;
-            padding: 5px; /* Espaciado interno */
-            box-sizing: border-box; /* Incluir padding en el ancho */
+            padding: 5px;
+            box-sizing: border-box;
         }
-        /* Encabezado */
         .header {
             text-align: center;
             margin-bottom: 10px;
         }
-        /* Divisores */
         .divider {
             border-top: 1px dashed #000;
             margin: 10px 0;
         }
-        /* Texto centrado */
         .text-center {
             text-align: center;
         }
-        /* Texto a la derecha */
         .text-right {
             text-align: right;
-            margin-right: 2;
         }
-        /* Tabla */
         .table {
             width: 100%;
             border-collapse: collapse;
@@ -59,33 +51,38 @@
 
     <!-- Detalles del comprobante -->
     <div class="content">
-    
-        <p><strong>Fecha:</strong> <?= esc($comprobante['fecha']) ?></p>
-        <p><strong>Recibí de:</strong> <?= esc($comprobante['nombre_pagador']) ?></p>
+        <p><strong>Fecha:</strong> <?= esc($fecha) ?></p>
+        <p><strong>Recibí de:</strong> <?= esc($pagador) ?></p>
         <div class="divider"></div>
 
         <h4 class="text-center">DETALLE DE PAGO:</h4>
+
         <table class="table">
-        <?php foreach ($comprobantes as $comprobante):?>
+            <?php 
+            $totalPagado = 0; // Variable para acumular el total
+            foreach ($comprobantes as $comprobante): 
+                $totalPagado += floatval($comprobante['monto']); // Sumar el total
+            ?>
             <tr>
                 <td><strong>Beneficiario:</strong></td>
                 <td class="text-right"><?= esc($comprobante['codigo_beneficiario']) ?></td>
             </tr>
             <tr>
                 <td><strong>Meses:</strong></td>
-                <td class="text-right"><?= esc($comprobante['meses_pagados']) ?> (<?= esc($comprobante['meses_pagados']) ?>)</td>
+                <td class="text-right"><?= esc($comprobante['meses_pagados']) ?> (
+                    <?= implode(", ", array_map('esc', $comprobante['meses_array'])) ?>
+                    )</td>
             </tr>
             <tr>
                 <td><strong>Monto:</strong></td>
                 <td class="text-right">Bs <?= esc($comprobante['monto']) ?></td>
             </tr>
-            
+            <tr><td colspan="2"><div class="divider"></div></td></tr>
+            <?php endforeach; ?>
         </table>
-        <div class="divider"></div>
 
-        <p><strong>Total Pagado:</strong> Bs <?= esc($comprobante['monto']) ?></p>
-        <p><strong>Total Literal:</strong> <?php //= esc($comprobante['total_literal']) ?></p>
-        <?php endforeach; ?>
+        <p><strong>Total Pagado:</strong> Bs <?= esc(number_format($totalPagado, 2)) ?></p>
+
         <div class="divider"></div>
     </div>
 

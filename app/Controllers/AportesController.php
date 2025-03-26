@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\AportesModel;
-
+use Config\Services;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 
@@ -11,58 +11,42 @@ class AportesController extends BaseController
 {
     protected $session;
     protected $model;
+    protected $permisos;
+    protected $datos;
 
     public function __construct()
     {
         helper('url'); // Agrega esta línea para cargar la biblioteca de URL
         $this->session = \Config\Services::session();
         $this->model = new AportesModel();
+        $this->permisos = Services::AutenticarUsuario();
+        //cargar datos
+        $this->datos = [
+            'titulo' => 'FPE - Aportes',
+            'datos_menu' => $this->permisos->getUserPermissions($this->session->get('usuario')['id']),
+            'usuario' => $this->session->get('usuario'),
+        ];
     }
 
     public function listar() {
         if ($this->session->get('login')) {
-            $usuario = $this->session->get('usuario');
-            $datos_menu = ['menu' => 'Inicio'];
-            $contenido = 'aportes/lista';
-            $lib = ['script' => 'mi-script.js'];
+            //var_dump($this->datos); exit;
+            $contenido = 'aportes/lista'; // Vista dinámica para el contenido
+            $lib = ['script' => 'mi-script.js']; // Datos para la vista 'templates/footer'
             $pagos = $this->model->listarComprobantes();
-            var_dump($pagos); exit;
-            /*
-            //la cantidad y listado de notificaciones
-            $data['cantidadN'] = 2;
-            $data['thema'] = "main";
-            $data['descripcion'] = "ventas";
-            //$usrid = $this->session->userdata('id_usuario');
-            $data['chatUsers'] = 1;
-            $data['getUserDetails'] = "admin";
-            //$data['username'] = $this->session->userdata('username');
-            //var_dump($data); exit;
-            $data['cantidadN'] = 2;
-            
-            $data['titulo'] = "FPE-Grupos";
-            $data['thema'] = "main";
-            $data['descripcion'] = "ventas";
-            $data['contenido'] = 'grupos/grupos';
-            $data['chatUsers'] = 1;
-            $data['getUserDetails'] = "admin";
-            $data['username'] = $this->session->userdata('username');
-            */
-            $data = [
-                'titulo' => 'FPE - Usuarios',
-                'datos_menu' => $datos_menu,
-                'contenido' => $contenido,
-                'lib' => $lib,
-                'usuarios' => 'usuario',
-                'usuario' => $this->session->get('usuario'),
-                'pagos' => $pagos,
-            ];
-            
-                return view('templates/estructura', $data);
+            //var_dump($pagos); exit;
+            //cargar datso por modulo
+            $data = $this->datos;
+            $data['contenido'] =$contenido;
+            $data['lib'] = $lib;
+            $data['pagos'] = $pagos;
+            //var_dump($data['datos_menu']); exit;
+
+            return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');
         }
-           
-       
+
     }
 
     public function mostrarFormulario()
@@ -78,18 +62,15 @@ class AportesController extends BaseController
                 // Si hay registros, incrementar el último número
                 $siguienteNumero = intval($ultimoNumero['nro_comp']) + 1;
             }
-
-            $datos_menu = ['menu' => 'Inicio']; // Datos para la vista 'templates/main'
+            //var_dump($this->datos); exit;
             $contenido = 'aportes/formulario'; // Vista dinámica para el contenido
             $lib = ['script' => 'mi-script.js']; // Datos para la vista 'templates/footer'
-
-            $data = [
-                'titulo' => 'Página de inicio',
-                'datos_menu' => $datos_menu,
-                'contenido' => $contenido,
-                'lib' => $lib,
-                'usuario' => $this->session->get('usuario'),
-            ];
+            
+            //cargar datso por modulo
+            $data = $this->datos;
+            $data['contenido'] =$contenido;
+            $data['lib'] = $lib;
+           
             // Formatear el número con ceros a la izquierda (ejemplo: 000152)
             $siguienteNumeroFormateado = str_pad($siguienteNumero, 6, '0', STR_PAD_LEFT);
 
@@ -120,11 +101,13 @@ class AportesController extends BaseController
             $fecha = date("Y-m-d");
             $total_pago = 0;
             $beneficiarios = $this->request->getPost('beneficiarios');
+            //var_dump($beneficiarios); exit;
             $num_comp = $this->request->getPost('nro_comp');
             
             foreach ($beneficiarios as $beneficiario) {
                 $codigo_beneficiario = $beneficiario['codigo'];
                 $meses_pagados = (int)$beneficiario['meses'];
+                $meses = $beneficiario['meses_seleccionados'];
                 $monto = $meses_pagados * 8;
                 $total_pago += $monto;
                 //fecha, nro_comp, nombre_pagador, codigo_beneficiario, meses_pagados, monto)
@@ -135,6 +118,7 @@ class AportesController extends BaseController
                     'codigo_beneficiario' => $codigo_beneficiario,
                     'meses_pagados' => $meses_pagados,
                     'monto'    => $monto,
+                    'meses' => $meses,
                 ];
                 //var_dump($data); exit;
                 $this->model->insert($data);
@@ -152,23 +136,60 @@ class AportesController extends BaseController
         
         // Obtener los datos del comprobante
         $comprobantes = $this->model->buscarCodigo($id);
-        //var_dump($comprobantes); exit;
+        foreach ($comprobantes as &$pago) {
+            $pago['meses_array'] = json_decode($pago['meses'], true);
+        }
+
+        $fecha = $comprobantes[0]['fecha'];
+        $pagador = $comprobantes[0]['nombre_pagador'];
+        $numero = $comprobantes[0]['nro_comp'];
+        $data = [
+        'comprobantes' => $comprobantes,
+        'fecha' => $fecha,
+        'pagador' => $pagador,
+        'numero' => $numero,
+        ];
+            // Convertir imágenes a base64
+    $logoPath = ROOTPATH . 'public/assets/images/logo.jpg';
+    $qrPath = ROOTPATH . 'public/assets/images/qr.png';
+    
+    $data['logo_base64'] = $this->imageToBase64($logoPath);
+    $data['qr_base64'] = $this->imageToBase64($qrPath);
+       
+        
 
         if (!$comprobantes) {
             return redirect()->to(site_url('aportes'))->with('error', 'Comprobante no encontrado');
         }
-
+        //var_dump($data); exit;
         // Cargar la vista del PDF
-        $html = view('comprobante_pdf', ['comprobantes' => $comprobantes]);
-        
-        // Configurar dompdf
-        $dompdf = new Dompdf();
+        $html = view('comprobante_view', $data);
+
+        // Configurar dompdf impresora termica
+        /*$dompdf = new Dompdf();
         $dompdf->loadHtml($html);
         $dompdf->setPaper([0, 0, 226.77, 841.89], 'portrait'); // 80mm de ancho
+        $dompdf->render();*/
+
+        // Configurar dompdf media carta vertical
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper([0, 0, 612, 396], 'portrait'); // Media carta en vertical
         $dompdf->render();
+        $dompdf->stream("comprobante_pago.pdf", ["Attachment" => false]); 
 
         // Descargar el PDF
-        $dompdf->stream("comprobante_{$id}.pdf", ['Attachment' => true]);
+        //$dompdf->stream("comprobante_{$id}.pdf", ['Attachment' => true]);
         return redirect()->to(site_url('aportes/formulario'));
     }
+
+    private function imageToBase64($path) 
+{
+    if (file_exists($path)) {
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        return 'data:image/' . $type . ';base64,' . base64_encode($data);
+    }
+    return '';
+}
 }
