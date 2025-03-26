@@ -58,6 +58,7 @@ $routes->get('/aportes/formulario', 'AportesController::mostrarFormulario');
 //$routes->get('/aportes/procesar', 'AportesController::precesarPago');
 $routes->post('/aportes/procesar', 'AportesController::precesarPago');
 $routes->get('/aportes/generar_pdf/(:num)', 'AportesController::generarPdf/$1');
+$routes->get('aportes/generarpdf/(:num)', 'AportesController::generarfPdf/$1');
 
 // Configuración de rutas asistencia
 

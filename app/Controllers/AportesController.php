@@ -6,6 +6,7 @@ use App\Models\AportesModel;
 use Config\Services;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use App\Libraries\PdfGenerator;
 
 class AportesController extends BaseController
 {
@@ -124,7 +125,7 @@ class AportesController extends BaseController
                 $this->model->insert($data);
             }
 
-            return redirect()->to(site_url('aportes/generar_pdf/' . $num_comp));
+            return redirect()->to(site_url('aportes/generarpdf/' . $num_comp));
         } else {
             return redirect()->to('/logout');
         }
@@ -136,6 +137,7 @@ class AportesController extends BaseController
         
         // Obtener los datos del comprobante
         $comprobantes = $this->model->buscarCodigo($id);
+        //var_dump($comprobantes); exit;
         foreach ($comprobantes as &$pago) {
             $pago['meses_array'] = json_decode($pago['meses'], true);
         }
@@ -181,6 +183,36 @@ class AportesController extends BaseController
         // Descargar el PDF
         //$dompdf->stream("comprobante_{$id}.pdf", ['Attachment' => true]);
         return redirect()->to(site_url('aportes/formulario'));
+    }
+    public function generarfPdf($id)
+    {
+        // Obtener datos del modelo
+        
+        $comprobantes = $this->model->buscarCodigo($id);
+        //var_dump($comprobante); exit;
+        // Procesar meses si están en JSON
+        foreach ($comprobantes as &$pago) {
+            $pago['meses_array'] = json_decode($pago['meses'], true);
+        }
+        $fecha = $comprobantes[0]['fecha'];
+        $pagador = $comprobantes[0]['nombre_pagador'];
+        $numero = $comprobantes[0]['nro_comp'];
+        $data = [
+        'comprobantes' => $comprobantes,
+        'fecha' => $fecha,
+        'pagador' => $pagador,
+        'numero' => $numero,
+        ];
+        //var_dump($data); exit;
+        // Generar PDF
+        $pdf = new PdfGenerator();
+        $pdf->generateReceipt($data);
+        
+        // Descargar directamente
+        $pdf->Output('comprobante_' . $id . '.pdf', 'D');
+        
+        // Alternativa para mostrar en navegador:
+        // $pdf->Output('comprobante_' . $id . '.pdf', 'I');
     }
 
     private function imageToBase64($path) 

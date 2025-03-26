@@ -27,7 +27,7 @@ class Persona extends BaseController
             $datos_menu = $this->permisos->getUserPermissions($this->session->get('usuario')['id']);
             $contenido = 'personas/personas';
             $lib = ['script' => 'mi-script.js'];
-            
+
             //var_dump($usuariosM); exit;
             /*$data['lib'] = 0;
             $data['datos_menu'] = null;
@@ -53,14 +53,14 @@ class Persona extends BaseController
             'lib' => $lib,
             'personas' => $this->personaModel->getPersons(),
             'usuario' => $this->session->get('usuario'),
-            'usuariosM' => $usuariosM,
+
         ];
             return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');
 
         }
-       
+
     }
 
     public function edit($id){
@@ -92,8 +92,8 @@ class Persona extends BaseController
     public function update() {
         // Lógica para procesar el formulario de edición
         // Obtener los datos del formulario
-        $id = $this->request->getPost('id');
-        $data = array(
+        //$id = $this->request->getPost('id');
+        /**$data = array(
             'local_id' => $this->request->getPost('local_id'),
             'account_name' => $this->request->getPost('account_name'),
             'estado' => $this->request->getPost('estado'),
@@ -104,10 +104,19 @@ class Persona extends BaseController
             'primary_caregiver' => $this->request->getPost('primary_caregiver'),
             'religious_affiliation' => $this->request->getPost('religious_affiliation'),
             'street' => $this->request->getPost('street')
+        ); */
+        $id = $this->request->getPost('id');
+    
+        $data = array(
+            'codigo'  => $this->request->getPost('local_id'),
+            'nombres' => $this->request->getPost('account_name'),
+            'estado'  => $this->request->getPost('estado'),
+            'phone'   => $this->request->getPost('phone'),
         );
-
-        $this->personaModel->update_person($id, $data);
-        redirect('personas');
+         // Si los datos son correctos, proceder con la actualización
+    $this->personaModel->update_person($id, $data);
+    
+    return redirect()->to('personas'); // Redirige correctamente
     }
 
     public function create() {

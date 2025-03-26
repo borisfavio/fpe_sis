@@ -100,14 +100,14 @@
 
     <!-- Encabezado con logo -->
     <div class="header">
-    <img src="<?= $logo_base64 ?>" alt="Logo" class="logo">
+    <img src="" alt="Logo" class="logo">
         <div class="header-info">
             <h2>Fundación Pasos de Esperanza</h2>
             <p>Calle 4 Nro 467, Zn Alto Santiago de Lacaya</p>
             <p>Teléfono: 69700259</p>
         </div>
         <div class="qr-code">
-        <img src="<?= $qr_base64 ?>" alt="QR" class="qr-code">
+        <img src="" alt="QR" class="qr-code">
         </div>
     </div>
 
