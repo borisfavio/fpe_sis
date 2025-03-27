@@ -63,7 +63,9 @@ $routes->get('aportes/generarpdf/(:num)', 'AportesController::generarfPdf/$1');
 // Configuración de rutas asistencia
 
     $routes->get('/asistencia', 'AsistenciaController::index');
+    $routes->get('/asistencia/tg/(:any)', 'AsistenciaController::tutor/$1');
     $routes->get('/asistencia/grupos/(:any)', 'AsistenciaController::asistenciaGrupos/$1');
+    $routes->get('/asistencia/tutor/', 'AsistenciaController::asistenciaGruposTutor');
     $routes->get('(:num)', 'AsistenciaController::show/$1');
     $routes->post('/asistencia/registrar', 'AsistenciaController::registrar');
     $routes->put('(:num)', 'AsistenciaController::update/$1');

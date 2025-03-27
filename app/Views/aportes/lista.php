@@ -51,7 +51,11 @@
                     <td><?= esc($pago['codigo_beneficiario']); ?></td>
                     <td><?= esc($pago['nombre_pagador']); ?></td>
                     <td><?= number_format($pago['total'], 2) ?></td>
-                    <td><?php //echo $persona->phone; ?></td>
+                    <td>
+                      <a href="<?php echo site_url('aportes/generarpdf/' . $pago['nro_comp']);?>">
+                        imprimir
+                      </a>
+                    </td>
                   </tr>
                 <?php endforeach; ?>
 

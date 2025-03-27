@@ -103,6 +103,12 @@
                                 Asistencia
                             </a>
                             <?php endif;?>
+                            <?php if ($datos_menu['asistencia']):?>
+                            <a class="nav-link" href="<?php echo site_url('asistencia/tutor'); ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                AsistenciaT
+                            </a>
+                            <?php endif;?>
                             <a class="nav-link" href="<?php echo site_url(''); ?>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Aportes

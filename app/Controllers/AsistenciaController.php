@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Models\AsistenciaModel;
 use App\Models\GrupoModel;
 use App\Models\PersonasModel;
+use App\Models\TutorModel;
 use CodeIgniter\RESTful\ResourceController;
 use Config\Services;
 
@@ -15,10 +16,11 @@ class AsistenciaController extends ResourceController
     protected $permisos;
     protected $grupoModel;
     protected $personaModel;
+    protected $tutorModel;
 
     public function __construct() {
         $this->grupoModel = new GrupoModel();
-        $this->personaModel = new PersonasModel();
+        $this->tutorModel = new TutorModel();
         helper('url'); // Agrega esta línea para cargar la biblioteca de URL
         $this->model = new AsistenciaModel();
         $this->session = \Config\Services::session();
@@ -36,6 +38,46 @@ class AsistenciaController extends ResourceController
             $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
              $grupos = $this->grupoModel->get_grupos_tutor($usuario['id_tutor']);
             
+            /*
+            //la cantidad y listado de notificaciones
+            $data['cantidadN'] = 2;
+            $data['thema'] = "main";
+            $data['descripcion'] = "ventas";
+            $data['chatUsers'] = 1;
+            $data['getUserDetails'] = "admin";
+            */
+        $data = [
+            'titulo' => 'FPE - Asistencia',
+            'datos_menu' => $datos_menu,
+            'contenido' => $contenido,
+            'lib' => $lib,
+            'usuario' => $this->session->get('usuario'),
+            'usuariosM' => $usuariosM,
+            'asistencias' => $this->model->findAll(),
+            'grupos' => $grupos,
+            'usuario' => $this->session->get('usuario'),
+        ];
+        //var_dump($data); exit;
+            return view('templates/estructura', $data);
+        } else {
+            return redirect()->to('/logout');
+
+        }
+    }
+
+    public function tutor($id)
+    {
+        if ($this->session->get('login')) {
+            $usuarioId = $this->session->get('usuario')['id'];
+            var_dump($id); exit;
+            $usuario = $this->session->get('usuario');
+            $datos_menu = $this->permisos->getUserPermissions($usuarioId);
+            $contenido = 'asistencia/asistencia_grupos_tutor';
+            $lib = ['script' => 'mi-script.js'];
+            $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
+            var_dump($this->grupoModel); exit;
+            $grupos = $this->grupoModel->get_grupos_tutor($id);
+            var_dump($grupos); exit;
             /*
             //la cantidad y listado de notificaciones
             $data['cantidadN'] = 2;
@@ -103,6 +145,56 @@ class AsistenciaController extends ResourceController
             'alumnos' => $personas,
             'usuario' => $this->session->get('usuario'),
             'idGrupo' => $idG,
+            'fecha_actual' => date('Y-m-d')
+        ];
+        //var_dump($data); exit;
+            return view('templates/estructura', $data);
+        } else {
+            return redirect()->to('/logout');
+
+        }
+    }
+
+    public function asistenciaGruposTutor(){
+        if ($this->session->get('login')) {
+            $usuarioId = $this->session->get('usuario')['id'];
+            $usuario = $this->session->get('usuario');
+            //var_dump($this->tutorModel); exit;
+            $personas = $this->tutorModel->getTutoresActivos();
+            //var_dump($personas); exit;
+            $datos_menu = $this->permisos->getUserPermissions($usuarioId);
+            $contenido = 'asistencia/asistencia_tutores';
+            $lib = ['script' => 'mi-script.js'];
+            $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
+            //var_dump($usuario['id_empleado']); exit;
+            
+            /*
+            //la cantidad y listado de notificaciones
+            $data['cantidadN'] = 2;
+            
+            $data['titulo'] = "Dashboard";
+            $data['thema'] = "main";
+            $data['descripcion'] = "ventas";
+           
+            //$usrid = $this->session->userdata('id_usuario');
+            $data['chatUsers'] = 1;
+            $data['getUserDetails'] = "admin";
+            //$data['username'] = $this->session->userdata('username');*/
+             // Datos para la vista 'templates/main'
+        // Vista dinámica para el contenido
+        // Datos para la vista 'templates/footer'
+
+        $data = [
+            'titulo' => 'FPE - Asistencia',
+            'datos_menu' => $datos_menu,
+            'contenido' => $contenido,
+            'lib' => $lib,
+            'usuario' => $this->session->get('usuario'),
+            'usuariosM' => $usuariosM,
+            'asistencias' => $this->model->findAll(),
+            'personas' => $personas,
+            'usuario' => $this->session->get('usuario'),
+            
             'fecha_actual' => date('Y-m-d')
         ];
         //var_dump($data); exit;

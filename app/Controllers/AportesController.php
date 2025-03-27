@@ -124,8 +124,9 @@ class AportesController extends BaseController
                 //var_dump($data); exit;
                 $this->model->insert($data);
             }
-
-            return redirect()->to(site_url('aportes/generarpdf/' . $num_comp));
+            //sleep(5); // Pausa de 5 segundos
+        return redirect()->to(site_url('aportes/lista'));
+            //return redirect()->to(site_url('aportes/generarpdf/' . $num_comp));
         } else {
             return redirect()->to('/logout');
         }
@@ -189,7 +190,7 @@ class AportesController extends BaseController
         // Obtener datos del modelo
         
         $comprobantes = $this->model->buscarCodigo($id);
-        //var_dump($comprobante); exit;
+        //var_dump($comprobantes); exit;
         // Procesar meses si están en JSON
         foreach ($comprobantes as &$pago) {
             $pago['meses_array'] = json_decode($pago['meses'], true);
@@ -206,9 +207,11 @@ class AportesController extends BaseController
         //var_dump($data); exit;
         // Generar PDF
         $pdf = new PdfGenerator();
+        
         $pdf->generateReceipt($data);
         
         // Descargar directamente
+        //$pdf->Output('I', 'comprobante_' . $id . '.pdf');
         $pdf->Output('comprobante_' . $id . '.pdf', 'D');
         
         // Alternativa para mostrar en navegador:
