@@ -25,6 +25,7 @@ class AsistenciaController extends ResourceController
         $this->model = new AsistenciaModel();
         $this->session = \Config\Services::session();
         $this->permisos = Services::AutenticarUsuario();
+        $this->personaModel = new PersonasModel();
     }
 
     public function index()
@@ -69,15 +70,15 @@ class AsistenciaController extends ResourceController
     {
         if ($this->session->get('login')) {
             $usuarioId = $this->session->get('usuario')['id'];
-            var_dump($id); exit;
+            
             $usuario = $this->session->get('usuario');
             $datos_menu = $this->permisos->getUserPermissions($usuarioId);
             $contenido = 'asistencia/asistencia_grupos_tutor';
             $lib = ['script' => 'mi-script.js'];
             $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
-            var_dump($this->grupoModel); exit;
+            //var_dump($this->grupoModel); exit;
             $grupos = $this->grupoModel->get_grupos_tutor($id);
-            var_dump($grupos); exit;
+            //var_dump($grupos); exit;
             /*
             //la cantidad y listado de notificaciones
             $data['cantidadN'] = 2;
@@ -97,7 +98,7 @@ class AsistenciaController extends ResourceController
             'grupos' => $grupos,
             'usuario' => $this->session->get('usuario'),
         ];
-        //var_dump($data); exit;
+        //var_dump($data['grupos']); exit;
             return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');
@@ -112,6 +113,7 @@ class AsistenciaController extends ResourceController
             $usuario = $this->session->get('usuario');
             //var_dump($usuario); exit;
             $personas = $this->personaModel->getPersonasGrupo($idG);
+            //var_dump($this->personaModel); exit;
             $datos_menu = $this->permisos->getUserPermissions($usuarioId);
             $contenido = 'asistencia/asistencia';
             $lib = ['script' => 'mi-script.js'];
