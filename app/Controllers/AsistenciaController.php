@@ -106,56 +106,50 @@ class AsistenciaController extends ResourceController
         }
     }
 
-    public function asistenciaGrupos($idG){
-        //var_dump($idG); exit;
+    public function asistenciaGrupos($idG) {
         if ($this->session->get('login')) {
             $usuarioId = $this->session->get('usuario')['id'];
             $usuario = $this->session->get('usuario');
-            //var_dump($usuario); exit;
+            $fecha = $this->request->getGet('fecha') ?? date('Y-m-d');
+            //var_dump($fecha); exit;
             $personas = $this->personaModel->getPersonasGrupo($idG);
-            //var_dump($this->personaModel); exit;
+            
             $datos_menu = $this->permisos->getUserPermissions($usuarioId);
             $contenido = 'asistencia/asistencia';
             $lib = ['script' => 'mi-script.js'];
-            $usuariosM = $this->permisos->hasPermission($usuarioId,'usuarios');
-            //var_dump($usuario['id_empleado']); exit;
-            
-            /*
-            //la cantidad y listado de notificaciones
-            $data['cantidadN'] = 2;
-            
-            $data['titulo'] = "Dashboard";
-            $data['thema'] = "main";
-            $data['descripcion'] = "ventas";
-           
-            //$usrid = $this->session->userdata('id_usuario');
-            $data['chatUsers'] = 1;
-            $data['getUserDetails'] = "admin";
-            //$data['username'] = $this->session->userdata('username');*/
-             // Datos para la vista 'templates/main'
-        // Vista dinámica para el contenido
-        // Datos para la vista 'templates/footer'
-
-        $data = [
-            'titulo' => 'FPE - Asistencia',
-            'datos_menu' => $datos_menu,
-            'contenido' => $contenido,
-            'lib' => $lib,
-            'usuario' => $this->session->get('usuario'),
-            'usuariosM' => $usuariosM,
-            'asistencias' => $this->model->findAll(),
-            'alumnos' => $personas,
-            'usuario' => $this->session->get('usuario'),
-            'idGrupo' => $idG,
-            'fecha_actual' => date('Y-m-d')
-        ];
-        //var_dump($data); exit;
+            $usuariosM = $this->permisos->hasPermission($usuarioId, 'usuarios');
+    
+            // Buscar si ya hay asistencia registrada para ese grupo y fecha
+            $asistenciasRegistradas = $this->model
+                ->where('fecha', $fecha)
+                ->where('grupo_id', $idG)
+                ->findAll();
+                //var_dump($asistenciasRegistradas); exit;
+            // Armar array con asistencias por alumno (clave: alumno_id)
+            $asistencias = [];
+            foreach ($asistenciasRegistradas as $asistencia) {
+                $asistencias[$asistencia['beneficiario_id']] = $asistencia;
+            }
+  
+            $data = [
+                'titulo' => 'FPE - Asistencia',
+                'datos_menu' => $datos_menu,
+                'contenido' => $contenido,
+                'lib' => $lib,
+                'usuario' => $usuario,
+                'usuariosM' => $usuariosM,
+                'alumnos' => $personas,
+                'asistencias' => $asistencias,
+                'idGrupo' => $idG,
+                'fecha_actual' => $fecha
+            ];
+    //var_dump($data); exit;
             return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');
-
         }
     }
+    
 
     public function asistenciaGruposTutor(){
         if ($this->session->get('login')) {
@@ -229,7 +223,8 @@ class AsistenciaController extends ResourceController
                 'beneficiario_id' => $alumno['id'],
                 'fecha' => $fecha,
                 'estado' => $estado,
-                'observaciones' => $this->request->getPost('observacion_'.$alumno['id'])
+                'observaciones' => $this->request->getPost('observacion_'.$alumno['id']),
+                'grupo_id' => $this->request->getPost('grupo_id'),
             ];
             
 
