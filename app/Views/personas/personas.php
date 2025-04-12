@@ -54,10 +54,10 @@
                           <tr>
                             <td><?= esc($persona['codigo']) ?></td>
                             <td><?= esc($persona['nombres']) ?></td>
-                            <td><?= esc($persona['phone']) ?></td>
-                            <td><?= ($persona['estado'] == 1) ? 'Activo' : 'Inactivo' ?></td>
+                            <td><?= esc($persona['telefono']) ?></td>
+                            <td><?= ($persona['estado'] == 'activo') ? 'Activo' : 'Inactivo' ?></td>
                             <td>
-                              <a href="https://wa.me/591<?= $persona['phone'] ?>" target="_blank" class="btn btn-circle btn-outline btn-mn btn-user">
+                              <a href="https://wa.me/591<?= $persona['telefono'] ?>" target="_blank" class="btn btn-circle btn-outline btn-mn btn-user">
                                 <span class="fa fa-edit"></span>
                               </a>
                               <a href="<?= site_url('/persons/edit/' . $persona['id']) ?>" class="btn btn-circle btn-outline btn-mn btn-info">

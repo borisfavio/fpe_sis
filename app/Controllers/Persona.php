@@ -55,6 +55,7 @@ class Persona extends BaseController
             'usuario' => $this->session->get('usuario'),
 
         ];
+        //var_dump($data); exit;
             return view('templates/estructura', $data);
         } else {
             return redirect()->to('/logout');

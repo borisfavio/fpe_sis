@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'fundacion_db',
+        'hostname'     => '50.6.138.26',
+        'username'     => 'gritechs_faviodv',
+        'password'     => '701120Bofa@',
+        'database'     => 'gritechs_fundacion_db',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
