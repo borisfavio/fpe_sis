@@ -90,6 +90,32 @@ class Persona extends BaseController
         }
     }
 
+    public function card($id)
+    {
+        // Lógica para mostrar el formulario de creación
+        if ($this->session->get('login')) {
+            $datos_menu = $this->permisos->getUserPermissions($this->session->get('usuario')['id']);
+            $contenido = 'personas/tarjeta'; // Vista dinámica para el contenido
+            $lib = ['script' => 'mi-script.js']; // Datos para la vista 'templates/footer'
+
+            $data = [
+                'titulo' => 'FPE - Beneficarios',
+                'datos_menu' => $datos_menu,
+                'contenido' => $contenido,
+                'lib' => $lib,
+                'usuario' => $this->session->get('usuario'),
+                'beneficiario' => $this->personaModel->getPersonById($id),
+            ];
+            $objeto = (object)$data['beneficiario'];
+            //var_dump($data['beneficiario']); exit;
+            //var_dump($objeto); exit;
+
+            return view('templates/estructura', $data);
+        } else {
+            return redirect()->to('/logout');
+        }
+    }
+
     public function update() {
         // Lógica para procesar el formulario de edición
         // Obtener los datos del formulario

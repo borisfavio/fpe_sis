@@ -20,6 +20,7 @@ $routes->get('/persons/create', 'Persona::create');
 $routes->post('/persona/store', 'Persona::store');
 $routes->get('/persona/store', 'Persona::store');
 $routes->get('persons/edit/(:any)', 'Persona::edit/$1');
+$routes->get('persona/ver/(:any)', 'Persona::card/$1');
 $routes->post('persona/update', 'Persona::update');
 $route['persons/delete/(:any)'] = 'persona/delete/$1';
 

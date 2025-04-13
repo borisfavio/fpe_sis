@@ -57,8 +57,8 @@
                             <td><?= esc($persona['telefono']) ?></td>
                             <td><?= ($persona['estado'] == 'activo') ? 'Activo' : 'Inactivo' ?></td>
                             <td>
-                              <a href="https://wa.me/591<?= $persona['telefono'] ?>" target="_blank" class="btn btn-circle btn-outline btn-mn btn-user">
-                                <span class="fa fa-edit"></span>
+                            <a href="<?= site_url('/persona/ver/' . $persona['id']) ?>" class="btn btn-circle btn-outline btn-mn btn-success">
+                                <span class="fa fa-eye"></span>
                               </a>
                               <a href="<?= site_url('/persons/edit/' . $persona['id']) ?>" class="btn btn-circle btn-outline btn-mn btn-info">
                                 <span class="fa fa-edit"></span>
