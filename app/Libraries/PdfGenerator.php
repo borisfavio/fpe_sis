@@ -36,7 +36,7 @@ class PdfGenerator extends FPDF
         //var_dump($num); exit;
         // Configurar fuente principal
         $this->SetFont('Arial', '', 14);
-        $this->Cell(0, 8, 'Fundacion Pasos de Esperanza', 0, 1, 'C');
+        $this->Cell(0, 8, 'COMPROBANTE', 0, 1, 'C');
         $this->SetFont('Arial', '', 10);
         $this->Cell(0, 5, 'Calle 4 Nro 467, Zn Alto Santiago de Lacaya', 0, 1, 'C');
         $this->Cell(0, 5, 'Telefono: 69700259', 0, 0, 'C');
@@ -45,14 +45,14 @@ class PdfGenerator extends FPDF
         // Información del comprobante
         $this->Ln(3);
         $this->SetFont('Arial', '', 10);
-        $this->Cell(95, 5, 'Responsable de pago: ' . $data['pagador'], 0, 0);
+        $this->Cell(95, 5, 'Responsable: ' . $data['pagador'], 0, 0);
         $this->Cell(95, 5, 'Fecha: ' . $data['fecha'], 0, 1, 'R');
 
         //var_dump($data['fecha']); exit;
         // Crear tabla que ocupe el ancho completo
         $anchoUtil = 216 - 30; // Ancho total - márgenes
         $this->SetFont('Arial', 'B', 12);
-        $this->Cell(0, 7, 'Detalle de Pagos', 0, 1, 'C');
+        $this->Cell(0, 7, 'Detalle', 0, 1, 'C');
         $this->Ln(1);
 
         $this->SetFont('Arial', '', 10);
@@ -61,8 +61,8 @@ class PdfGenerator extends FPDF
         $this->SetFillColor(100, 100, 100); // Gris más oscuro
         $this->SetTextColor(255, 255, 255);
 
-        $this->Cell($anchoUtil * 0.4, 7, 'Concepto', 1, 0, 'C', true);
-        $this->Cell($anchoUtil * 0.3, 7, 'Periodo', 1, 0, 'C', true);
+        $this->Cell($anchoUtil * 0.4, 7, 'Codigo Beneficiario', 1, 0, 'C', true);
+        $this->Cell($anchoUtil * 0.3, 7, 'Nombres', 1, 0, 'C', true);
         $this->Cell($anchoUtil * 0.3, 7, 'Monto', 1, 1, 'R', true);
         // Restaurar colores para contenido normal
         //$this->SetFillColor(255, 255, 255); // Blanco
@@ -135,7 +135,7 @@ class PdfGenerator extends FPDF
         $this->SetFont('Arial', 'I', 8);
         $this->Ln(14);
         $this->Cell(0, 4, 'Firma____________________________', 0, 1, 'L');
-        $this->Cell(0, 4, 'Nombre: ________________________', 0, 1, 'L');
+        $this->Cell(0, 4, 'Nombre: '.$data['pagador'].'', 0, 1, 'L');
         $this->Cell(0, 4, 'C.I.: __________________________', 0, 0, 'L');
 
 
