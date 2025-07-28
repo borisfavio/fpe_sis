@@ -38,9 +38,10 @@
                         <a href="<?= site_url('/persons/edit/' . $beneficiario['id']) ?>" class="btn btn-warning m-1">
                             <i class="fas fa-edit"></i> Editar
                         </a>
-                        <a href="anecdotario.php?codigo=<?= $beneficiario['id'] ?>" class="btn btn-info m-1">
+                        <butt href="anecdotario.php?codigo=<?= $beneficiario['id'] ?>" class="btn btn-info m-1">
                             <i class="fas fa-book"></i> Anecdotario
-                        </a>
+                        </butt>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalRegistro">Agregar al expediente</button>
                         <?php //var_dump($beneficiario); exit;?>
                     </div>
                 </div>
@@ -48,4 +49,230 @@
         </div>
     </div>
 </div>
+
+<style>
+    .card-profile {
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 15px;
+    }
+    .card-profile img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin: auto;
+    }
+  </style>
+
+<div class="card card-profile shadow">
+  <div class="card-body text-center">
+<!-- Botón para mostrar historial -->
+<div class="text-center">
+  <button class="btn btn-outline-secondary btn-sm mt-2" id="btnMostrarHistorial">Ver Historial del Expediente</button>
+</div>
+
+<!-- Sección de historial -->
+<div class="container mt-3 d-none" id="historialExpediente">
+  <h5 class="text-center mb-3">🕘 Historial del Expediente</h5>
+  <ul class="list-group" id="listaHistorial">
+    <!-- Aquí se añadirán dinámicamente los registros -->
+  </ul>
+</div>
+  
+</div>
+</div>
+
+<!-- Modal dinámico -->
+<div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form id="formRegistro" method="post" action="#">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRegistroLabel">Agregar al expediente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          
+        </div>
+        
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="tipo">Tipo de Registro</label>
+            <select id="tipo" name="tipo" class="form-control" required>
+              <option value="">Seleccione una opción</option>
+              <option value="anecdotario">Anecdotario</option>
+              <option value="permiso">Permiso</option>
+              <option value="visita">Visita Domiciliar</option>
+              <option value="solicitud">Solicitud</option>
+            </select>
+          </div>
+
+          <div id="campos-dinamicos">
+            <!-- Aquí se insertarán los campos según el tipo -->
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+</div>
+
+<!-- Scripts necesarios -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  $('#tipo').on('change', function () {
+    const tipo = $(this).val();
+    let html = '';
+
+    if (tipo === 'anecdotario') {
+      html = `
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input type="text" name="titulo" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="contenido">Descripción</label>
+          <textarea name="contenido" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="responsable">Responsable</label>
+          <input type="text" name="responsable" class="form-control" required>
+        </div>
+      `;
+    } else if (tipo === 'permiso') {
+      html = `
+        <div class="form-group">
+          <label for="motivo">Motivo</label>
+          <input type="text" name="motivo" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="fecha_permiso">Fecha</label>
+          <input type="date" name="fecha_permiso" class="form-control" required>
+        </div>
+      `;
+    } else if (tipo === 'visita') {
+      html = `
+        <div class="form-group">
+          <label for="fecha_visita">Fecha de Visita</label>
+          <input type="date" name="fecha_visita" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="observacion">Observaciones</label>
+          <textarea name="observacion" class="form-control" required></textarea>
+        </div>
+      `;
+    } else if (tipo === 'solicitud') {
+      html = `
+        <div class="form-group">
+          <label for="tipo_solicitud">Tipo de Solicitud</label>
+          <input type="text" name="tipo_solicitud" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="detalle">Detalle</label>
+          <textarea name="detalle" class="form-control" required></textarea>
+        </div>
+      `;
+    }
+
+    $('#campos-dinamicos').html(html);
+  });
+</script>
+<script>
+  $('#tipo').on('change', function () {
+    const tipo = $(this).val();
+    let html = '';
+
+    if (tipo === 'anecdotario') {
+      html = `
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input type="text" name="titulo" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="contenido">Descripción</label>
+          <textarea name="contenido" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="responsable">Responsable</label>
+          <input type="text" name="responsable" class="form-control" required>
+        </div>
+      `;
+    } else if (tipo === 'permiso') {
+      html = `
+        <div class="form-group">
+          <label for="motivo">Motivo</label>
+          <input type="text" name="motivo" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="fecha_permiso">Fecha</label>
+          <input type="date" name="fecha_permiso" class="form-control" required>
+        </div>
+      `;
+    } else if (tipo === 'visita') {
+      html = `
+        <div class="form-group">
+          <label for="fecha_visita">Fecha de Visita</label>
+          <input type="date" name="fecha_visita" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="observacion">Observaciones</label>
+          <textarea name="observacion" class="form-control" required></textarea>
+        </div>
+      `;
+    } else if (tipo === 'solicitud') {
+      html = `
+        <div class="form-group">
+          <label for="tipo_solicitud">Tipo de Solicitud</label>
+          <input type="text" name="tipo_solicitud" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="detalle">Detalle</label>
+          <textarea name="detalle" class="form-control" required></textarea>
+        </div>
+      `;
+    }
+
+    $('#campos-dinamicos').html(html);
+  });
+
+  // Mostrar/Ocultar historial
+  $('#btnMostrarHistorial').on('click', function () {
+    $('#historialExpediente').toggleClass('d-none');
+    $(this).text(function(i, text){
+      return text === "Ver Historial del Expediente" ? "Ocultar Historial" : "Ver Historial del Expediente";
+    });
+  });
+
+  // Simulación de guardado al enviar el formulario
+  $('#formRegistro').on('submit', function (e) {
+    e.preventDefault(); // evita envío real
+
+    const tipo = $('#tipo').val();
+    let texto = `<strong>${tipo.toUpperCase()}</strong>: `;
+
+    const formData = $(this).serializeArray();
+    formData.forEach(field => {
+      if (field.name !== 'tipo') {
+        texto += `<br><em>${field.name}</em>: ${field.value}`;
+      }
+    });
+
+    $('#listaHistorial').prepend(`<li class="list-group-item">${texto}</li>`);
+
+    // cerrar modal y limpiar formulario
+    $('#modalRegistro').modal('hide');
+    this.reset();
+    $('#campos-dinamicos').html('');
+  });
+</script>
+
+
 

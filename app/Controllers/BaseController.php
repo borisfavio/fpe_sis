@@ -55,4 +55,24 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = service('session');
     }
+    // En tu controlador base o filtro
+protected function checkSession()
+{
+    $session = \Config\Services::session();
+    
+    if (!$session->has('login') || !$session->get('is_logged_in')) {
+        return redirect()->to('/login')
+            ->with('error', 'Por favor inicia sesión primero');
+    }
+    
+    // Opcional: verificar último acceso
+    $lastActivity = $session->get('last_activity');
+    if ($lastActivity && (time() - $lastActivity > 3600)) { // 1 hora de inactividad
+        $session->destroy();
+        return redirect()->to('/login')
+            ->with('error', 'Sesión expirada por inactividad');
+    }
+    
+    $session->set('last_activity', time());
+}
 }

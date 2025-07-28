@@ -53,7 +53,7 @@
                         <?php foreach ($personas as $persona): ?>
                           <tr>
                             <td><?= esc($persona['codigo']) ?></td>
-                            <td><?= esc($persona['nombres']) ?></td>
+                            <td><?= esc($persona['nombres']) ?> <?= esc($persona['apellidos']) ?></td>
                             <td><?= esc($persona['telefono']) ?></td>
                             <td><?= ($persona['estado'] == 'activo') ? 'Activo' : 'Inactivo' ?></td>
                             <td>

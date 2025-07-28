@@ -81,6 +81,10 @@
                         <input type="date" class="form-control" id="fecha" name="fecha" value="<?= $fecha_actual ?>" required>
                         <input type="hidden" name="grupo_id" value="<?= $idGrupo ?>">
                     </div>
+                    <button type="button" id="btn-marcar-todos-presente" class="btn btn-success mb-3">
+    <i class="fas fa-user-check"></i> Marcar Todos como Presente
+</button>
+
 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable">
                         <thead>
@@ -94,6 +98,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php //var_dump($alumnos); exit;; ?>
                         <?php $nro = 1; ?>
                             <?php foreach ($alumnos as $alumno):
                                 $id = $alumno['id'];
@@ -188,6 +193,27 @@
                     hiddenInput.val(status);
                 });
             </script>
+
+            <!-- funcion pora poner presnete a toda la columna-->
+             <script>
+    $('#btn-marcar-todos-presente').on('click', function () {
+        $('tbody tr').each(function () {
+            const row = $(this);
+            const id = row.data('id');
+            const button = row.find('.attendance-toggle .btn');
+            const hiddenInput = row.find('input[name="asistencia_' + id + '"]');
+
+            // Cambiar estado visual
+            button.removeClass('status-empty status-absent status-permission')
+                  .addClass('status-present')
+                  .html('<i class="fas fa-check"></i> Presente');
+
+            // Cambiar valor oculto del input
+            hiddenInput.val('present');
+        });
+    });
+</script>
+
 
             <!-- Asegúrate de tener jQuery y Bootstrap JS cargados -->
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

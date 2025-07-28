@@ -124,12 +124,13 @@ class PdfGenerator extends FPDF
             $this->Cell($anchoUtil * 0.4, 7, $comprobante['codigo_beneficiario'], 1, 0);
             $this->Cell($anchoUtil * 0.3, 7, $meses, 1, 0, 'C');
             $this->Cell($anchoUtil * 0.3, 7, number_format($comprobante['monto'], 2), 1, 1, 'R');
+            $totalPagado+$comprobante['monto'];
         }
         
         // Total
         $this->SetFont('Arial', 'B', 10);
         $this->Cell($anchoUtil * 0.7, 7, 'Total Pagado:', 1, 0, 'R');
-        $this->Cell($anchoUtil * 0.3, 7, 'Bs ' . number_format(10, 2), 1, 1, 'R');
+        $this->Cell($anchoUtil * 0.3, 7, 'Bs ' . number_format($totalPagado, 2), 1, 1, 'R');
 
         // Firma
         $this->SetFont('Arial', 'I', 8);

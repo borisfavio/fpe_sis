@@ -9,9 +9,9 @@
                             class="card border-primary">
                             <div class="card-body">
                               <h3 class="card-title"><?php echo $grupo['nombre']; ?></h3>
-                              <h5><?php echo 'Dias '.$grupo['id']; ?></h5>
                               <p class="card-text">Participantes</p>
-                              <a class="btn btn-primary" href="<?php echo site_url('/asistencia/tg/'.$grupo['id']);?>">Ver</a>
+                              <a class="btn btn-info" href="<?php echo site_url('/asistencia/mes/'.$grupo['id']);?>">Ver</a>
+                              <a class="btn btn-primary" href="<?php echo site_url('/asistencia/tg/'.$grupo['id']);?>">Registrar</a>
                             </div>
                           </div>
                           </div>

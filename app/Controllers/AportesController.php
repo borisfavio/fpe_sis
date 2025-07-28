@@ -2,11 +2,12 @@
 
 namespace App\Controllers;
 
+use App\Libraries\DirectPrinter;
 use App\Models\AportesModel;
 use Config\Services;
 use Dompdf\Dompdf;
-use Dompdf\Options;
-use App\Libraries\PdfGenerator;
+
+
 
 class AportesController extends BaseController
 {
@@ -206,8 +207,8 @@ class AportesController extends BaseController
         ];
         //var_dump($data); exit;
         // Generar PDF
-        $pdf = new PdfGenerator();
-        
+        $pdf = new DirectPrinter();
+        //var_dump($pdf); exit;
         $pdf->generateReceipt($data);
         
         // Descargar directamente
@@ -227,4 +228,29 @@ class AportesController extends BaseController
     }
     return '';
 }
+
+public function reporteFormulario()
+    {
+        return view('aportes/reporte_form');
+    }
+
+    public function generarReporte()
+    {
+        $fecha_inicio = $this->request->getPost('fecha_inicio');
+        $fecha_fin = $this->request->getPost('fecha_fin');
+        
+        $pagoModel = new AportesModel();
+
+        $data['pagos'] = $pagoModel
+            ->where('fecha >=', $fecha_inicio)
+            ->where('fecha <=', $fecha_fin)
+            ->orderBy('fecha', 'ASC')
+            ->findAll();
+
+        $data['fecha_inicio'] = $fecha_inicio;
+        $data['fecha_fin'] = $fecha_fin;
+
+        return view('aportes/reporte_resultado', $data);
+    }
+
 }

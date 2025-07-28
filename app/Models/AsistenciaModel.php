@@ -17,11 +17,5 @@ class AsistenciaModel extends Model
         return $this->insert($data);
     }
     //obtener asistencia por fecha
-    public function obtenerAsistenciasPorFecha($fecha)
-    {
-        return $this->select('asistencias.*, alumnos.nombre, alumnos.matricula, alumnos.grupo')
-                    ->join('alumnos', 'alumnos.id = asistencias.alumno_id')
-                    ->where('fecha', $fecha)
-                    ->findAll();
-    }
+ 
 }

@@ -58,7 +58,10 @@ class PersonasModel extends Model
             return null; // O lanzar una excepción
         }
         //otra opcion
-        return $this->where('group_id', $grupo_id)->findAll(); // Ejecutar procedimiento almacenado
+        //var_dump($grupo_id);
+        //$pers = $this->where('grupo_id', $grupo_id)->findAll();
+        //var_dump($pers); exit; 
+        return $this->where('grupo_id', $grupo_id)->findAll(); // Ejecutar procedimiento almacenado
     }
 
     public function updatePerson($id, $data)

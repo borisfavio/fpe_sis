@@ -107,13 +107,15 @@ class AsistenciaController extends ResourceController
     }
 
     public function asistenciaGrupos($idG) {
+        
         if ($this->session->get('login')) {
             $usuarioId = $this->session->get('usuario')['id'];
             $usuario = $this->session->get('usuario');
             $fecha = $this->request->getGet('fecha') ?? date('Y-m-d');
-            //var_dump($fecha); exit;
-            $personas = $this->personaModel->getPersonasGrupo($idG);
             
+        //var_dump($fecha); exit;
+            $personas = $this->personaModel->getPersonasGrupo($idG);
+            //var_dump($personas); exit;
             $datos_menu = $this->permisos->getUserPermissions($usuarioId);
             $contenido = 'asistencia/asistencia';
             $lib = ['script' => 'mi-script.js'];
@@ -212,8 +214,11 @@ class AsistenciaController extends ResourceController
         $model = new AsistenciaModel();
         $alumnoModel = new PersonasModel();
         
+
         $fecha = $this->request->getPost('fecha');
-        $alumnos = $alumnoModel->where('group_id', $this->request->getPost('grupo_id'))->findAll();
+        //var_dump($this->request->getPost('grupo_id')); exit;
+
+        $alumnos = $alumnoModel->where('grupo_id', $this->request->getPost('grupo_id'))->findAll();
         
         //var_dump($alumnos); exit;
         foreach ($alumnos as $alumno) {
@@ -268,5 +273,67 @@ class AsistenciaController extends ResourceController
             return $this->respondDeleted(['id' => $id]);
         }
         return $this->failNotFound('Asistencia no encontrada');
+    }
+    //asistencia por grupos
+        public function asistenciaMes($id = null)
+    {
+        $asistenciaModel = new AsistenciaModel();
+        $beneficiarioModel = new PersonasModel();
+        $grupos = $this->grupoModel->get_grupos_tutor($id);
+        $data['grupos']= $grupos;
+            
+
+        return view('asistencia/asistencia_por_grupo',$data);
+    }
+
+    public function getPorFiltro()
+    {
+        $mes = $this->request->getGet('mes');
+        $anio = $this->request->getGet('anio');
+        $grupo = $this->request->getGet('grupo');
+
+        $fechasRaw = $this->model->select('fecha')->distinct()->orderBy('fecha')->findAll();
+        $fechas = array_map(fn($row) => $row['fecha'], $fechasRaw);
+
+
+
+        $registros = $this->model
+            ->select('asistencias.fecha, asistencias.estado, beneficiarios.nombres') // Asegúrate que el alias de la tabla sea correcto
+            ->join('beneficiarios', 'beneficiarios.id = asistencias.beneficiario_id')
+            ->where('asistencias.grupo_id', $grupo)
+            ->where('MONTH(asistencias.fecha)', $mes)
+            ->where('YEAR(asistencias.fecha)', $anio)
+            ->findAll();
+
+
+        $asistencia = [];
+
+        // Rellenar la matriz con estados por defecto ("Falta")
+        foreach ($registros as $registro) {
+            $nombre = $registro['nombres'];
+            $fecha = $registro['fecha'];
+            $estado = $registro['estado']; // Presente, Falta, Permiso...
+
+            if (!isset($asistencia[$nombre])) {
+                foreach ($fechas as $f) {
+                    $asistencia[$nombre][$f] = 'Falta'; // Valor por defecto
+                }
+            }
+
+            $asistencia[$nombre][$fecha] = $estado;
+        }
+        $matriz = [];
+        foreach ($asistencia as $nombre => $dias) {
+            $fila = ['nombre' => $nombre];
+            foreach ($fechas as $fecha) {
+                $fila[$fecha] = $dias[$fecha] ?? 'Falta';
+            }
+            $matriz[] = $fila;
+        }
+
+        return $this->response->setJSON([
+            'fechas' => $fechas,
+            'data' => $matriz
+        ]);
     }
 }
