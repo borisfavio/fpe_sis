@@ -262,7 +262,7 @@
     const anio = document.getElementById('year').value;
     const grupo = document.getElementById('grupo').value;
 
-    fetch(`http://192.168.0.58/fpe_sis/public/index.php/beneficiarios/getPorFiltro?mes=${mes}&anio=${anio}&grupo=${grupo}`)
+    fetch(`http://192.168.0.3/fpe_sis/public/index.php/beneficiarios/getPorFiltro?mes=${mes}&anio=${anio}&grupo=${grupo}`)
         .then(response => response.json())
         .then(data => {
             const { fechas, data: beneficiarios } = data;
@@ -289,7 +289,7 @@
                     const estado = beneficiario[fecha] || 'Falta';
                     let color = '';
                     if (estado === 'present') color = '✅';
-                    else if (estado === 'absent') color = '❌';
+                    else if (estado === 'Falta') color = '❌';
                     else if (estado === 'permission') color = '🟡';
 
                     row += `<td>${color} ${estado}</td>`;

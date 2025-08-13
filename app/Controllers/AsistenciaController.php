@@ -216,6 +216,7 @@ class AsistenciaController extends ResourceController
         
 
         $fecha = $this->request->getPost('fecha');
+        //var_dump($fecha); exit;
         //var_dump($this->request->getPost('grupo_id')); exit;
 
         $alumnos = $alumnoModel->where('grupo_id', $this->request->getPost('grupo_id'))->findAll();
@@ -239,8 +240,10 @@ class AsistenciaController extends ResourceController
                           ->first();
                           //var_dump($existe); exit;
             if ($existe) {
+                //var_dump($data);exit;
                 $model->update($existe['id'], $data);
             } else {
+                //var_dump($data);exit;
                 $model->registrarAsistencia($data);
             }
         }
