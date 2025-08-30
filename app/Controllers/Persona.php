@@ -67,6 +67,7 @@ class Persona extends BaseController
     public function edit($id){
               // Lógica para mostrar el formulario de creación
 		if ($this->session->get('login')) {
+            
             $datos_menu = $this->permisos->getUserPermissions($this->session->get('usuario')['id']);
             $contenido = 'personas/edit_person'; // Vista dinámica para el contenido
             $lib = ['script' => 'mi-script.js']; // Datos para la vista 'templates/footer'
@@ -118,32 +119,23 @@ class Persona extends BaseController
 
     public function update() {
         // Lógica para procesar el formulario de edición
-        // Obtener los datos del formulario
-        //$id = $this->request->getPost('id');
-        /**$data = array(
-            'local_id' => $this->request->getPost('local_id'),
-            'account_name' => $this->request->getPost('account_name'),
-            'estado' => $this->request->getPost('estado'),
-            'birthdate' => $this->request->getPost('birthdate'),
-            'caregiver_birthdate' => $this->request->getPost('caregiver_birthdate'),
-            'gender' => $this->request->getPost('gender'),
-            'phone' => $this->request->getPost('phone'),
-            'primary_caregiver' => $this->request->getPost('primary_caregiver'),
-            'religious_affiliation' => $this->request->getPost('religious_affiliation'),
-            'street' => $this->request->getPost('street')
-        ); */
         $id = $this->request->getPost('id');
-    
+   
         $data = array(
             'codigo'  => $this->request->getPost('local_id'),
             'nombres' => $this->request->getPost('account_name'),
-            'estado'  => $this->request->getPost('estado'),
-            'phone'   => $this->request->getPost('phone'),
+            'apellidos'=>$this->request->getPost('apellidos'),
+            'fecha_nacimiento'=>$this->request->getPost('birthdate'),
+            'sexo'=>$this->request->getPost('gender'),
+            'estado'=> $this->request->getPost('estado'),
+            'telefono'   => $this->request->getPost('phone'),
+            'calle'=> $this->request->getPost('street'),
+            'cuidador_primario'   => $this->request->getPost('primary_caregiver'),
         );
+       
          // Si los datos son correctos, proceder con la actualización
-    $this->personaModel->update_person($id, $data);
-    
-    return redirect()->to('personas'); // Redirige correctamente
+    $this->personaModel->updatePerson($id, $data);
+    return redirect()->to('persona/ver/'.$id); // Redirige correctamente
     }
 
     public function create() {

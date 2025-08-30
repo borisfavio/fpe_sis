@@ -8,7 +8,7 @@ class PersonasModel extends Model
     protected $table = 'beneficiarios'; // Nombre de la tabla
     protected $primaryKey = 'id'; // Clave primaria
     /*protected $allowedFields = ['Local_id','account_name','gender','birthdate','caregiver_birthdate','phone','estado','nombres', 'codigo', 'edad','primary_caregiver','religious_affiliation','street', 'group_id'];*/ // Campos permitidos para inserción/actualización
-    protected $allowedFields = ['phone','estado','nombres', 'codigo']; // Campos permitidos para inserción/actualización
+    protected $allowedFields = ['telefono','estado','nombres', 'apellidos', 'codigo','fecha_nacimiento','calle','grupo_id']; // Campos permitidos para inserción/actualización
 
 
 
@@ -19,11 +19,38 @@ class PersonasModel extends Model
 
     public function insertPerson($data)
     {
+        //var_dump($data); exit;
         return $this->insert($data); // Inserta un registro y devuelve el ID
     }
 
+public function getPersonByIdDetails($id)
+    {
+        // 1. Define la consulta SQL para llamar al procedimiento almacenado.
+        //    Usa un signo de interrogación (?) como marcador de posición para el parámetro.
+        $sql = "CALL sp_get_person_details(?)";
+
+        // 2. Ejecuta la consulta usando la conexión a la base de datos ($this->db).
+        //    Pasa el ID como un array en el segundo argumento.
+        $query = $this->db->query($sql, [$id]);
+
+        // 3. Obtiene el resultado. Como esperas un solo registro, puedes usar getRowArray().
+        //    - getRow(): Devuelve una sola fila como un objeto.
+        //    - getRowArray(): Devuelve una sola fila como un array asociativo.
+        //    - getResult(): Devuelve múltiples filas como un array de objetos.
+        //    - getResultArray(): Devuelve múltiples filas como un array de arrays asociativos.
+        $result = $query->getRowArray();
+
+        // Es una buena práctica liberar la memoria del resultado, especialmente si el SP
+        // pudiera devolver múltiples conjuntos de resultados.
+        $query->freeResult();
+
+        // 4. Retorna el resultado obtenido.
+        return $result;
+    }
+    
     public function getPersonById($id)
     {
+        //var_dump($this->find($id)); exit;
         return $this->find($id); // Busca un registro por su ID
     }
 
@@ -65,8 +92,8 @@ class PersonasModel extends Model
     }
 
     public function updatePerson($id, $data)
-    {   
-        var_dump($data); exit;
+    {
+        //var_dump($data); exit;
         return $this->update($id, $data); // Actualiza el registro con el ID dado
     }
 
